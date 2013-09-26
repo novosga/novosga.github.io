@@ -141,7 +141,86 @@ locales:
         title: Desenvolvimento
         text: |
               <p>Quer participar do desenvolvimento? Então cadastre-se no <a href="http://github.com">Github</a> e crie logo o seu fork.</p>
-      
+              
+    faq:
+      title: FAQ
+      text: |
+            <p>Seção com algumas das perguntas feitas frequentemente.</p>
+            <p>Caso não encontre sua dúvida aqui, sinta-se à vontade para publicá-la no <a href="http://novosga.org/forum">nosso fórum</a>.</p>
+      entries:
+        - title: O Novo SGA funciona no Windows?
+          text: |
+                <p>Sim. O Novo SGA é escrito em PHP e Java, que são linguagens multiplataformas.</p>
+                <p>Porém, a documentação do Novo SGA é focada em distribuíções Linux baseadas em Debian.</p>
+        - title: Qual distribuição Linux devo utilizar?
+          text: |
+                <p>Qualquer distribuíção que tenha suporte à instalação do PHP 5.3+ e Java 7.</p>
+                <p>Porém, a documentação do Novo SGA é focada em distribuíções Linux baseadas em Debian.</p>
+        - title: Quais os requisitos de hardware para instalar o Novo SGA?
+          text: |
+                <p>Definir os requisitos mínimos de hardware para sustentar o sistema depende de vários fatores, como por exemplo o tamanho da instituição, a quantidade de unidades de atendimento e de usuários, número de acessos simultâneos, volume de atendimento e etc.</p>
+        - title: Existe alguma forma de imprimir direto sem escolher a impressora?
+          text: |
+                <p>Isso varia de acordo com o navegador que esteja utilizando.</p>
+                <p><strong>Firefox</strong><p>
+                <p>No firefox há uma opção chamada "silent print".</p>
+                <ol>
+                    <li>Acesse a página <a href="about:config">about:config</a></li>
+                    <li>clique com o botão direito em qualquer lugar da página e selecione "Novo->Booleano".</li>
+                    <li>digite o nome "print.always_print_silent"</li>
+                    <li>selecione o valor "verdadeiro" (true)</li>
+                </ol>
+                <p><strong>Chrome 18+</strong><p>
+                <p>No chrome pode imprimir silenciosamente utilizando a opção kiosk. Basta adicionar os parâmetros "--kiosk --kiosk-printing" no atalho do navegador</p>
+                <ul>
+                    <li>Linux: google-chrome --kiosk --kiosk-printing</li>
+                    <li>Windows: botão direito no atalho, propriedades, e adicionar os parâmetros (--kiosk --kiosk-printing) ao final do campo alvo.</li>
+                </ul>
+        - title: Qual é o modelo de impressora recomendado?
+          text: |
+                <p>Qualquer impressora térmica.</p>
+        - title: Estou tendo problemas com a codificação dos caracteres. O que pode ser?
+          text: |
+                <p>O encoding utilizado pelo Novo SGA é o UTF-8.</p>
+                <p>O que pode estar acontecendo é que o banco de dados (banco ou tabela) não em UTF-8.</p>
+                <p><strong>MySQL</strong></p>
+                <p>Se você estiver utilizando o MySQL, verifique se o arquivo my.conf está configurado como mostra abaixo:</p>
+                <pre>[client]
+                ...
+                default-character-set = utf8
+
+                [mysqld]
+                ...
+                character-set-server = utf8</pre>
+        - title: Erro "Falha obtendo unidades". O que pode ser?
+          text: |
+                <p>A principal razão para não conseguir obter unidades é causada por erros de configuração (server.conf) do controlador de paineis.</p>
+                <p>Sugiro que revisem com cuidado esse arquivo, atentando para todos os detalhes. Os comentários contidos nesse arquivo devem ser lidos e entendidos para que não hajam equívocos.</p>
+                <p>Também devem ser considerados outros problemas alheios ao sistema, como problemas de rede, firewall etc.</p>
+                <p>Problemas com bloqueio por proxy também já foram relatados.</p>
+        - title: Como alterar a palavra "Guichê" que aparece no painel?
+          text: |
+                <p><strong>Para versões até 0.7.2</strong></p>
+                <p>Abra o arquivo <strong>core/business/AtendimentoBusiness.php</strong>, procure por <strong>nm_local</strong>, e altere o valor desse parâmetro para o nome desejado.</p>
+                <p>No caso abaixo, ao invés de "Guichê" aparecerá "Sala":</p>
+                <pre>
+                // Antes
+                $stmt->bindValue('nm_local', _('Guichê'));</pre>
+                                <pre>
+                // Depois
+                $stmt->bindValue('nm_local', _('Sala'));</pre>
+        - title: Apareceu mensagem de nova versão disponível. Como atualizo o Novo SGA?
+          text: |
+                <p>Primeiramente é bom acessar o <a href="http://novosga.org/blog" title="Blog">blog do Novo SGA</a> para saber quais mudanças foram feitas. Como o sistema é dividido em 3 partes, nem sempre as 3 sofrem anterações. Depois basta ir à <a href="http://novosga.org/download">página de download</a> e baixar a nova versão</p>
+                <p><strong>Atualizando o Painel</strong></p>
+                <p>Para atualizar o painel (tanto cliente quanto servidor) basta apenas parar o processo e substituir os arquivos pela nova versão.</p>
+                <p><strong>Atualizando a parte Web</strong></p>
+                <p>Já na parte web, é necessário manter o arquivo de configuração atual. Para isso basta seguir os passos:</p>
+                <ul>
+                    <li>Extraia a versão web em um novo diretório</li>
+                    <li>Substitua o arquivo core/Config.php pelo o mesmo arquivo da versão já instalada</li>
+                    <li>Teste a nova versão e depois substitua a antiga pela nova. Pronto.</li>
+                </ul>
       
   en:
     nav:
@@ -281,6 +360,86 @@ locales:
         title: Desenvolvimento
         text: |
               <p>Quer participar do desenvolvimento? Então cadastre-se no <a href="http://github.com">Github</a> e crie logo o seu fork.</p>
+              
+    faq:
+      title: FAQ
+      text: |
+            <p>Seção com algumas das perguntas feitas frequentemente.</p>
+            <p>Caso não encontre sua dúvida aqui, sinta-se à vontade para publicá-la no <a href="http://novosga.org/forum">nosso fórum</a>.</p>
+      entries:
+        - title: O Novo SGA funciona no Windows?
+          text: |
+                <p>Sim. O Novo SGA é escrito em PHP e Java, que são linguagens multiplataformas.</p>
+                <p>Porém, a documentação do Novo SGA é focada em distribuíções Linux baseadas em Debian.</p>
+        - title: Qual distribuição Linux devo utilizar?
+          text: |
+                <p>Qualquer distribuíção que tenha suporte à instalação do PHP 5.3+ e Java 7.</p>
+                <p>Porém, a documentação do Novo SGA é focada em distribuíções Linux baseadas em Debian.</p>
+        - title: Quais os requisitos de hardware para instalar o Novo SGA?
+          text: |
+                <p>Definir os requisitos mínimos de hardware para sustentar o sistema depende de vários fatores, como por exemplo o tamanho da instituição, a quantidade de unidades de atendimento e de usuários, número de acessos simultâneos, volume de atendimento e etc.</p>
+        - title: Existe alguma forma de imprimir direto sem escolher a impressora?
+          text: |
+                <p>Isso varia de acordo com o navegador que esteja utilizando.</p>
+                <p><strong>Firefox</strong><p>
+                <p>No firefox há uma opção chamada "silent print".</p>
+                <ol>
+                    <li>Acesse a página <a href="about:config">about:config</a></li>
+                    <li>clique com o botão direito em qualquer lugar da página e selecione "Novo->Booleano".</li>
+                    <li>digite o nome "print.always_print_silent"</li>
+                    <li>selecione o valor "verdadeiro" (true)</li>
+                </ol>
+                <p><strong>Chrome 18+</strong><p>
+                <p>No chrome pode imprimir silenciosamente utilizando a opção kiosk. Basta adicionar os parâmetros "--kiosk --kiosk-printing" no atalho do navegador</p>
+                <ul>
+                    <li>Linux: google-chrome --kiosk --kiosk-printing</li>
+                    <li>Windows: botão direito no atalho, propriedades, e adicionar os parâmetros (--kiosk --kiosk-printing) ao final do campo alvo.</li>
+                </ul>
+        - title: Qual é o modelo de impressora recomendado?
+          text: |
+                <p>Qualquer impressora térmica.</p>
+        - title: Estou tendo problemas com a codificação dos caracteres. O que pode ser?
+          text: |
+                <p>O encoding utilizado pelo Novo SGA é o UTF-8.</p>
+                <p>O que pode estar acontecendo é que o banco de dados (banco ou tabela) não em UTF-8.</p>
+                <p><strong>MySQL</strong></p>
+                <p>Se você estiver utilizando o MySQL, verifique se o arquivo my.conf está configurado como mostra abaixo:</p>
+                <pre>[client]
+                ...
+                default-character-set = utf8
+
+                [mysqld]
+                ...
+                character-set-server = utf8</pre>
+        - title: Erro "Falha obtendo unidades". O que pode ser?
+          text: |
+                <p>A principal razão para não conseguir obter unidades é causada por erros de configuração (server.conf) do controlador de paineis.</p>
+                <p>Sugiro que revisem com cuidado esse arquivo, atentando para todos os detalhes. Os comentários contidos nesse arquivo devem ser lidos e entendidos para que não hajam equívocos.</p>
+                <p>Também devem ser considerados outros problemas alheios ao sistema, como problemas de rede, firewall etc.</p>
+                <p>Problemas com bloqueio por proxy também já foram relatados.</p>
+        - title: Como alterar a palavra "Guichê" que aparece no painel?
+          text: |
+                <p><strong>Para versões até 0.7.2</strong></p>
+                <p>Abra o arquivo <strong>core/business/AtendimentoBusiness.php</strong>, procure por <strong>nm_local</strong>, e altere o valor desse parâmetro para o nome desejado.</p>
+                <p>No caso abaixo, ao invés de "Guichê" aparecerá "Sala":</p>
+                <pre>
+                // Antes
+                $stmt->bindValue('nm_local', _('Guichê'));</pre>
+                                <pre>
+                // Depois
+                $stmt->bindValue('nm_local', _('Sala'));</pre>
+        - title: Apareceu mensagem de nova versão disponível. Como atualizo o Novo SGA?
+          text: |
+                <p>Primeiramente é bom acessar o <a href="http://novosga.org/blog" title="Blog">blog do Novo SGA</a> para saber quais mudanças foram feitas. Como o sistema é dividido em 3 partes, nem sempre as 3 sofrem anterações. Depois basta ir à <a href="http://novosga.org/download">página de download</a> e baixar a nova versão</p>
+                <p><strong>Atualizando o Painel</strong></p>
+                <p>Para atualizar o painel (tanto cliente quanto servidor) basta apenas parar o processo e substituir os arquivos pela nova versão.</p>
+                <p><strong>Atualizando a parte Web</strong></p>
+                <p>Já na parte web, é necessário manter o arquivo de configuração atual. Para isso basta seguir os passos:</p>
+                <ul>
+                    <li>Extraia a versão web em um novo diretório</li>
+                    <li>Substitua o arquivo core/Config.php pelo o mesmo arquivo da versão já instalada</li>
+                    <li>Teste a nova versão e depois substitua a antiga pela nova. Pronto.</li>
+                </ul>
       
   es:
     nav:
@@ -420,3 +579,83 @@ locales:
         title: Desenvolvimento
         text: |
               <p>Quer participar do desenvolvimento? Então cadastre-se no <a href="http://github.com">Github</a> e crie logo o seu fork.</p>
+              
+    faq:
+      title: FAQ
+      text: |
+            <p>Seção com algumas das perguntas feitas frequentemente.</p>
+            <p>Caso não encontre sua dúvida aqui, sinta-se à vontade para publicá-la no <a href="http://novosga.org/forum">nosso fórum</a>.</p>
+      entries:
+        - title: O Novo SGA funciona no Windows?
+          text: |
+                <p>Sim. O Novo SGA é escrito em PHP e Java, que são linguagens multiplataformas.</p>
+                <p>Porém, a documentação do Novo SGA é focada em distribuíções Linux baseadas em Debian.</p>
+        - title: Qual distribuição Linux devo utilizar?
+          text: |
+                <p>Qualquer distribuíção que tenha suporte à instalação do PHP 5.3+ e Java 7.</p>
+                <p>Porém, a documentação do Novo SGA é focada em distribuíções Linux baseadas em Debian.</p>
+        - title: Quais os requisitos de hardware para instalar o Novo SGA?
+          text: |
+                <p>Definir os requisitos mínimos de hardware para sustentar o sistema depende de vários fatores, como por exemplo o tamanho da instituição, a quantidade de unidades de atendimento e de usuários, número de acessos simultâneos, volume de atendimento e etc.</p>
+        - title: Existe alguma forma de imprimir direto sem escolher a impressora?
+          text: |
+                <p>Isso varia de acordo com o navegador que esteja utilizando.</p>
+                <p><strong>Firefox</strong><p>
+                <p>No firefox há uma opção chamada "silent print".</p>
+                <ol>
+                    <li>Acesse a página <a href="about:config">about:config</a></li>
+                    <li>clique com o botão direito em qualquer lugar da página e selecione "Novo->Booleano".</li>
+                    <li>digite o nome "print.always_print_silent"</li>
+                    <li>selecione o valor "verdadeiro" (true)</li>
+                </ol>
+                <p><strong>Chrome 18+</strong><p>
+                <p>No chrome pode imprimir silenciosamente utilizando a opção kiosk. Basta adicionar os parâmetros "--kiosk --kiosk-printing" no atalho do navegador</p>
+                <ul>
+                    <li>Linux: google-chrome --kiosk --kiosk-printing</li>
+                    <li>Windows: botão direito no atalho, propriedades, e adicionar os parâmetros (--kiosk --kiosk-printing) ao final do campo alvo.</li>
+                </ul>
+        - title: Qual é o modelo de impressora recomendado?
+          text: |
+                <p>Qualquer impressora térmica.</p>
+        - title: Estou tendo problemas com a codificação dos caracteres. O que pode ser?
+          text: |
+                <p>O encoding utilizado pelo Novo SGA é o UTF-8.</p>
+                <p>O que pode estar acontecendo é que o banco de dados (banco ou tabela) não em UTF-8.</p>
+                <p><strong>MySQL</strong></p>
+                <p>Se você estiver utilizando o MySQL, verifique se o arquivo my.conf está configurado como mostra abaixo:</p>
+                <pre>[client]
+                ...
+                default-character-set = utf8
+
+                [mysqld]
+                ...
+                character-set-server = utf8</pre>
+        - title: Erro "Falha obtendo unidades". O que pode ser?
+          text: |
+                <p>A principal razão para não conseguir obter unidades é causada por erros de configuração (server.conf) do controlador de paineis.</p>
+                <p>Sugiro que revisem com cuidado esse arquivo, atentando para todos os detalhes. Os comentários contidos nesse arquivo devem ser lidos e entendidos para que não hajam equívocos.</p>
+                <p>Também devem ser considerados outros problemas alheios ao sistema, como problemas de rede, firewall etc.</p>
+                <p>Problemas com bloqueio por proxy também já foram relatados.</p>
+        - title: Como alterar a palavra "Guichê" que aparece no painel?
+          text: |
+                <p><strong>Para versões até 0.7.2</strong></p>
+                <p>Abra o arquivo <strong>core/business/AtendimentoBusiness.php</strong>, procure por <strong>nm_local</strong>, e altere o valor desse parâmetro para o nome desejado.</p>
+                <p>No caso abaixo, ao invés de "Guichê" aparecerá "Sala":</p>
+                <pre>
+                // Antes
+                $stmt->bindValue('nm_local', _('Guichê'));</pre>
+                                <pre>
+                // Depois
+                $stmt->bindValue('nm_local', _('Sala'));</pre>
+        - title: Apareceu mensagem de nova versão disponível. Como atualizo o Novo SGA?
+          text: |
+                <p>Primeiramente é bom acessar o <a href="http://novosga.org/blog" title="Blog">blog do Novo SGA</a> para saber quais mudanças foram feitas. Como o sistema é dividido em 3 partes, nem sempre as 3 sofrem anterações. Depois basta ir à <a href="http://novosga.org/download">página de download</a> e baixar a nova versão</p>
+                <p><strong>Atualizando o Painel</strong></p>
+                <p>Para atualizar o painel (tanto cliente quanto servidor) basta apenas parar o processo e substituir os arquivos pela nova versão.</p>
+                <p><strong>Atualizando a parte Web</strong></p>
+                <p>Já na parte web, é necessário manter o arquivo de configuração atual. Para isso basta seguir os passos:</p>
+                <ul>
+                    <li>Extraia a versão web em um novo diretório</li>
+                    <li>Substitua o arquivo core/Config.php pelo o mesmo arquivo da versão já instalada</li>
+                    <li>Teste a nova versão e depois substitua a antiga pela nova. Pronto.</li>
+                </ul>
