@@ -1,0 +1,45 @@
+---
+layout: default
+menuItem: community
+---
+
+<div>
+    <h2>{{ site.locales[site.locale].community.title }}</h2>
+    {{ site.locales[site.locale].community.text }}
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading">{{ site.locales[site.locale].community.blog.title }}</div>
+    <div class="panel-body">
+        {{ site.locales[site.locale].community.blog.text }}
+        <p>
+            <a class="btn btn-success" href="http://blog.novosga.org">
+                <span class="glyphicon glyphicon-eye-open"></span>&nbsp;
+                {{ site.locales[site.locale].community.view }}
+            </a>
+        </p>
+    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading">{{ site.locales[site.locale].community.forum.title }}</div>
+    <div class="panel-body">
+        {{ site.locales[site.locale].community.forum.text }}
+        <p>
+            <a class="btn btn-success" href="http://forum.novosga.org">
+                <span class="glyphicon glyphicon-eye-open"></span>&nbsp;
+                {{ site.locales[site.locale].community.view }}
+            </a>
+        </p>
+    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading">{{ site.locales[site.locale].community.dev.title }}</div>
+    <div class="panel-body">
+        {{ site.locales[site.locale].community.dev.text }}
+        <p>
+            <a class="btn btn-success" href="http://github.com/novosga">
+                <span class="glyphicon glyphicon-eye-open"></span>&nbsp;
+                {{ site.locales[site.locale].community.view }}
+            </a>
+        </p>
+    </div>
+</div>

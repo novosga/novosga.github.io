@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link rel="shortcut icon" href="favicon.png">
+        <title>{{ site.locales[site.locale].nav[page.menuItem] }} | {{ site.name }}</title>
+        <link href="css/bootstrap.css" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">
+        <link href="fancybox/jquery.fancybox.css" rel="stylesheet" />
+        <link rel="shortcut icon" href="img/favicon.png" />
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+          <script src="js/html5shiv.js"></script>
+          <script src="js/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <div class="container">
+            <div class="masthead">
+                <h1 class="text-muted">
+                    <a href="http://novosga.org">{{ site.name }}</a>
+                </h1>
+                <ul class="nav nav-justified">
+                    <li {% if page.menuItem == "home" %}class="active"{% endif %}><a href="index.html">{{ site.locales[site.locale].nav.home }}</a></li>
+                    <li {% if page.menuItem == "projects" %}class="active"{% endif %}><a href="projects.html">{{ site.locales[site.locale].nav.projects }}</a></li>
+                    <li {% if page.menuItem == "downloads" %}class="active"{% endif %}><a href="downloads.html">{{ site.locales[site.locale].nav.downloads }}</a></li>
+                    <li {% if page.menuItem == "faq" %}class="active"{% endif %}><a href="faq.html">{{ site.locales[site.locale].nav.faq }}</a></li>
+                    <li {% if page.menuItem == "community" %}class="active"{% endif %}><a href="community.html">{{ site.locales[site.locale].nav.community }}</a></li>
+                    <li {% if page.menuItem == "about" %}class="active"{% endif %}><a href="about.html">{{ site.locales[site.locale].nav.about }}</a></li>
+                </ul>
+            </div>
+
+            {{ content }}
+            
+            <div class="footer">
+                <p>&copy; Novo SGA 2014</p>
+            </div>
+        </div>
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="fancybox/jquery.fancybox.pack.js"></script>
+        <script type="text/javascript" src="js/script.js"></script>
+        <script type="text/javascript">
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-38335253-1']);
+            _gaq.push(['_trackPageview']);
+            (function() {
+              var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+              ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+              var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+      </script>
+    </body>
+</html>
