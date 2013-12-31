@@ -133,12 +133,21 @@ dd {
 
 /* Main marketing message and sign up button */
 .jumbotron {
+    margin: 10px 0;
     text-align: center;
-    background-color: transparent;
+    background-color: #8EC1DA;
+    background-image: url(../img/clouds.png);
+    background-repeat: no-repeat;
+    background-position: left bottom;
 }
+
 .jumbotron .btn {
     font-size: 21px;
     padding: 14px 24px;
+}
+
+.jumbotron h1, .jumbotron p {
+    color: #fff;
 }
 
 /* Customize the nav-justified links to be fill the entire space of the .navbar */
