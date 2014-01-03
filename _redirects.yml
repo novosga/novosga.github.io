@@ -1,4 +1,6 @@
 # blog
+"blog": "http://blog.novosga.org/"
+"blog/": "http://blog.novosga.org/"
 "blog/2013/08/nova-versao-disponivel-0-7-2/": "http://blog.novosga.org/2013/08/nova-versao-disponivel-0-7-2/"
 "blog/2013/10/versao-1-0-0-beta-disponivel-para-testes/": "http://blog.novosga.org/2013/10/versao-1-0-0-beta-disponivel-para-testes/"
 "blog/2013/05/nova-versao-disponivel-0-6-1/": "http://blog.novosga.org/2013/05/nova-versao-disponivel-0-6-1/"
@@ -6,7 +8,6 @@
 "blog/2013/03/documentacao-manual-do-usuario/": "http://blog.novosga.org/2013/03/documentacao-manual-do-usuario/"
 "blog/2013/05/nova-versao-disponivel-0-7-0/": "http://blog.novosga.org/2013/05/nova-versao-disponivel-0-7-0/"
 "blog/tag/novosga/": "http://blog.novosga.org/tag/novosga/"
-"blog/": "http://blog.novosga.org/"
 "blog/2013/09/data-lancamento-versao-1-0-0/": "http://blog.novosga.org/2013/09/data-lancamento-versao-1-0-0/"
 "blog/tag/painel/": "http://blog.novosga.org/tag/painel/"
 "blog/2013/12/": "http://blog.novosga.org/2013/12/"
