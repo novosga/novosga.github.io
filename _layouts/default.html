@@ -24,19 +24,24 @@
         </a>
         <div class="container">
             <div class="masthead">
-                <h1 class="text-muted">
-                    <a href="http://novosga.org">{{ site.name }}</a>
-                </h1>
-                <div class="main-banner">
-                    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                    <!-- banner_728x90 -->
-                    <ins class="adsbygoogle"
-                         style="display:inline-block;width:728px;height:90px"
-                         data-ad-client="ca-pub-4035316215618754"
-                         data-ad-slot="3262868622"></ins>
-                    <script>
-                    (adsbygoogle = window.adsbygoogle || []).push({});
-                    </script>
+                <div class="row">
+                    <div class="col-sm-2">
+                        <h1>
+                            <a href="http://novosga.org">{{ site.name }}</a>
+                        </h1>
+                    </div>
+                    <div class="main-banner col-sm-10">
+                        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                        <!-- responsive -->
+                        <ins class="adsbygoogle"
+                             style="display:block"
+                             data-ad-client="ca-pub-4035316215618754"
+                             data-ad-slot="7320978228"
+                             data-ad-format="auto"></ins>
+                        <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
+                    </div>
                 </div>
                 <ul class="nav nav-justified">
                     <li {% if page.menuItem == "home" %}class="active"{% endif %}><a href="index.html">{{ site.locales[site.locale].nav.home }}</a></li>

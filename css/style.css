@@ -10,22 +10,9 @@
     display: block;
 }
 
-@media (min-width: 1000px) {
-    .masthead h1 {
-        padding-top: 10px;
-        float: left;
-    }
-
-    .main-banner {
-        padding: 10px 0;
-        text-align: center;
-    }
-}
-
-@media (max-width: 999px) {
-    .main-banner {
-        display: none;
-    }
+.main-banner {
+    padding: 10px 0;
+    text-align: center;
 }
 
 .gallery {
