@@ -44,13 +44,13 @@ menuItem: community
     </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading">Doação</div>
+    <div class="panel-heading">{{ site.locales[site.locale].community.donation.title }}</div>
     <div class="panel-body">
-        <p>Quer ajudar a manter os projetos e não sabe como contribuir? Considere fazer uma doação:</p>
+        {{ site.locales[site.locale].community.donation.text }}
         <form target="pagseguro" action="https://pagseguro.uol.com.br/checkout/v2/donation.html" method="post">
             <input type="hidden" name="receiverEmail" value="rogeriolino@gmail.com" />
             <input type="hidden" name="currency" value="BRL" />
-            <input type="image" src="https://p.simg.uol.com.br/out/pagseguro/i/botoes/doacoes/184x42-doar-assina.gif" name="submit" alt="Pague com PagSeguro - é rápido, grátis e seguro!" />
+            <input type="image" src="https://p.simg.uol.com.br/out/pagseguro/i/botoes/doacoes/184x42-doar-assina.gif" name="submit" alt="PagSeguro" />
         </form>
     </div>
 </div>

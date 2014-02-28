@@ -25,3 +25,12 @@ menuItem: home
         <p><a class="btn btn-primary" href="community.html">{{ site.locales[site.locale].home.see_more }}</a></p>
     </div>
 </div>
+<div class="row">
+    <h3>{{ site.locales[site.locale].home.donation.title }}</h3>
+    <p>{{ site.locales[site.locale].home.donation.text }}</p>
+    <form target="pagseguro" action="https://pagseguro.uol.com.br/checkout/v2/donation.html" method="post">
+        <input type="hidden" name="receiverEmail" value="rogeriolino@gmail.com" />
+        <input type="hidden" name="currency" value="BRL" />
+        <input type="image" src="https://p.simg.uol.com.br/out/pagseguro/i/botoes/doacoes/184x42-doar-assina.gif" name="submit" alt="PagSeguro" />
+    </form>
+</div>
