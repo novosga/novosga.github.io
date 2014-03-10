@@ -6,7 +6,7 @@ locales:
     pt:
         meta:
             description: "Novo SGA: Sistema de Gerenciamento de Atendimento gratuido e código aberto"
-            keywords: novo, sga, sistema, gerenciamento, atendimento, controle, fila, php5, css3, html5, mit, gratis, gratuito, open-source
+            keywords: novo, sga, sistema, gerenciamento, atendimento, controle, fila, senha, emissao, impressao, gratis, gratuito, open-source, web
             author: Rogério Alencar Lino Filho
         nav:
             home: Home
@@ -21,7 +21,7 @@ locales:
             see_more: Ver mais
             about:
                 title: Sobre
-                text: Novo SGA não é um simples projeto e sim uma plataforma para gerenciamento de atendimento.
+                text: Novo SGA não é um simples projeto e sim uma plataforma para gerenciamento de filas de atendimento.
             projects:
                 title: Projetos
                 text: Conheça os projetos que fazem parte da plataforma Novo SGA.
@@ -95,7 +95,7 @@ locales:
             title: Sobre
             text: |
                   <p>SGA é o acrônimo de Sistema de Gerenciamento de Atendimento, e Novo SGA é uma plataforma de código aberto que permite grandes ou pequenas organizações gerenciarem o fluxo do atendimento.</p>
-                  <p>Criado em Dezembro de 2012 por <a href="http://rogeriolino.com">Rogério Alencar Lino Filho</a>, o Novo SGA provê funcionalidades para controlar a ordem da fila de atendimento e os tempos para atender (hora de chegada, tempo de espera, tempo de deslocamento até o balcão e tempo de atendimento), além de fornecer gráficos e estatísticas para aprimorar o atendimento ao cliente.</p>
+                  <p>Criado em Dezembro de 2012 por <a href="http://rogeriolino.com">Rogério Alencar Lino Filho</a>, o Novo SGA provê funcionalidades para controlar a ordem da fila e os tempos de atendimento (hora de chegada, tempo de espera, tempo de deslocamento até o balcão e tempo de atendimento), além de fornecer gráficos e estatísticas para aprimorar o atendimento ao cliente.</p>
             features:
                 title: Funcionalidades
                 text: |
