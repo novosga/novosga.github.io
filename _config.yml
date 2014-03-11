@@ -31,7 +31,9 @@ locales:
             donation:
                 title: Doação
                 text: Ajude a manter o desenvolvimento do projeto. Faça uma doação
-                
+            news:
+                title: Novidades
+                text: Veja abaixo as últimas notícias do blog e os últimos comentários do fórum
         downloads:
             title: Downloads
             text: |
