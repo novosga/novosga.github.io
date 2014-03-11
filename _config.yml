@@ -97,7 +97,7 @@ locales:
             title: Sobre
             text: |
                   <p>SGA é o acrônimo de Sistema de Gerenciamento de Atendimento, e Novo SGA é uma plataforma de código aberto que permite grandes ou pequenas organizações gerenciarem o fluxo do atendimento.</p>
-                  <p>Criado em Dezembro de 2012 por <a href="http://rogeriolino.com">Rogério Alencar Lino Filho</a>, o Novo SGA provê funcionalidades para controlar a ordem da fila e os tempos de atendimento (hora de chegada, tempo de espera, tempo de deslocamento até o balcão e tempo de atendimento), além de fornecer gráficos e estatísticas para aprimorar o atendimento ao cliente.</p>
+                  <p>Criado em Dezembro de 2012 por <a href="http://rogeriolino.com">Rogério Alencar Lino Filho</a>, o Novo SGA provê funcionalidades para controlar a ordem da fila e os tempos de atendimento (hora de chegada, tempo de espera, tempo de deslocamento até o balcão e tempo total do atendimento), além de fornecer gráficos e estatísticas para aprimorar o atendimento ao cliente.</p>
             features:
                 title: Funcionalidades
                 text: |
