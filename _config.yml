@@ -6,7 +6,7 @@ locales:
     pt:
         meta:
             description: "Novo SGA: Sistema de Gerenciamento de Atendimento gratuido e código aberto"
-            keywords: novo, sga, sistema, gerenciamento, atendimento, controle, fila, senha, emissao, impressao, gratis, gratuito, open-source, web
+            keywords: novo sga, sga, sistema de atendimento, gerenciamento de atendimento, controle de fila, emissao de senha, impressao de senha, gratis, gratuito, open-source, web
             author: Rogério Alencar Lino Filho
         nav:
             home: Home
