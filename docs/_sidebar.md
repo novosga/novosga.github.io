@@ -14,7 +14,7 @@
     - [Users](module-users.md)
 
 - Panel
- - [Painel web](painel-web.md)
+  - [Painel web](painel-web.md)
 
 - API
   - [Routes](api.md)
