@@ -15,3 +15,6 @@
 
 - Panel
  - [Painel web](painel-web.md)
+
+- API
+  - [Routes](api.md)
