@@ -1,6 +1,6 @@
 # API
 
-Rotas da API do Novo SGA.
+Novo SGA API routes.
 
 | Método | URI | Descrição |
 | --- | --- | --- |

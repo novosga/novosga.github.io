@@ -1,20 +1,18 @@
-- Installation
+- Instalação
   - [Docker](install-docker.md)
 
-- Customization
+- Customização
   - [Configuration](configuration.md)
 
-- Guide
-  - [Administration](administration.md)
-  - Default modules
-    - [Settings](module-settings.md)
-    - [Triage](module-triage.md)
+- Guia
+  - [Administração](administration.md)
+  - Módulos padrões
+    - [Configurações](module-settings.md)
+    - [Triagem](module-triage.md)
     - [Monitor](module-monitor.md)
-    - [Attendance](module-attendance.md)
-    - [Users](module-users.md)
+    - [Atendimento](module-attendance.md)
+    - [Usuários](module-users.md)
 
-- Panel
-  - [Painel web](painel-web.md)
+- [Painel web](painel-web.md)
 
-- API
-  - [Routes](api.md)
+- [API](api.md)

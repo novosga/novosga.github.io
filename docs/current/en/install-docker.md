@@ -1,20 +1,6 @@
-# Instalação via Docker
+# Docker Install
 
-## Container simples
-
-Executando um simples container:
-
-```
-docker run --rm \
-  -p 80:80 -p 2020:2020
-  -e DATABASE_URL="mysql://novosga@mysqldb:3306/novosga2?charset=utf8mb4&serverVersion=5.7" \
-  -e DATABASE_PASS="MySQL_App_P@ssW0rd!" \
-  novosga/novosga:latest
-```
-
-## Compose
-
-Criar arquivo docker-compose.yml com o conteúdo abaixo:
+Compose file
 
 ```yaml
 version: '2'
@@ -27,7 +13,6 @@ services:
       - mysqldb
     ports:
       - "80:80"
-      - "2020:2020"
     environment:
       APP_ENV: 'prod'
       # database connection
@@ -49,9 +34,6 @@ services:
       NOVOSGA_PRIORITY_DESCRIPTION: 'Priority service'
       # default place
       NOVOSGA_PLACE_NAME: 'Box'
-      # Set TimeZone and locale
-      TZ: 'America/Sao_Paulo'
-      LANGUAGE: 'pt_BR'
   mysqldb:
     image: mysql:5.7
     restart: always
@@ -59,18 +41,22 @@ services:
       MYSQL_USER: 'novosga'
       MYSQL_DATABASE: 'novosga2'
       MYSQL_ROOT_PASSWORD: 'MySQL_r00t_P@ssW0rd!'
-      MYSQL_PASSWORD: 'MySQL_App_P@ssW0rd!'
 ```
 
-Executando docker-compose:
+Running docker-compose
 
     docker-compose up -d
 
-Acessar o banco de dados MySQL como `root`:
+Log in on MySQL database as root:
 
     docker-compose exec mysqldb sh -c  'mysql -uroot -p'
 
-Dar permissão de acesso para o usuário da aplicação:
+Grant access to application user:
 
     GRANT ALL ON novosga2.* TO 'novosga'@'%' IDENTIFIED BY 'MySQL_App_P@ssW0rd!';
     quit
+
+
+Run Novo SGA install
+
+    docker-compose exec novosga sh -c 'bin/console novosga:install'
