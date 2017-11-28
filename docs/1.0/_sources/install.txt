@@ -64,9 +64,9 @@ Segue abaixo os screenshots das etapas do instalador:
 Painel
 -------
 
-Com o Painel Web, basta baixar e extrair o pacote zip a partir do link a seguir: https://github.com/novosga/painel-web/archive/master.zip
+Com o Painel Web, basta baixar e extrair o pacote zip a partir do link a seguir: https://github.com/novosga/painel-web/archive/v1.3.0.zip
 
-Extraia o pacote no diretório www (htdocs, inetpub, etc.) do seu servidor HTTP (no caso do Apache2 em /var/www) e acesse http://<nome_do_servidor>/painel-web-master.
+Extraia o pacote no diretório www (htdocs, inetpub, etc.) do seu servidor HTTP (no caso do Apache2 em /var/www) e acesse http://<nome_do_servidor>/painel-web-1.3.0.
 
 Com o painel carregado aparecerá no canto superior direito o menu com o item Configuração. Ao clicar no mesmo aparecerá uma janela para informar a URL do Novo SGA:
 
