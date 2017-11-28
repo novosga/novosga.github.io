@@ -1,0 +1,79 @@
+.is-primary {
+    background-color: #428bca !important;
+}
+
+.hero-main1 {
+    background-color: #8EC1DA;
+    background-image: url(http://www.novosga.org/img/clouds.png);
+    background-position: center bottom;
+    background-repeat: repeat-x;
+}
+
+.hero-main1 .hero-head {
+    background-color: #8EC1DA;
+}
+
+.hero-main .nav-item img {
+    max-height: 2.75rem;
+}
+
+#b {
+    box-shadow: 1px 10px 10px #ddd;
+    border-radius: 24px;
+    display: inline-block;
+    height: 240px;
+    padding: 20px;
+    margin-bottom: 40px;
+    width: 240px;
+}
+
+#b img:hover {
+    -webkit-animation: spin .3s ease;
+    -moz-animation: spin .3s ease;
+    animation: spin .3s ease;
+}
+
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+#composer {
+    -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+    -webkit-animation: fadeIn 500ms both;
+          animation: fadeIn 500ms both;
+    -webkit-animation-delay: 1.4s;
+          animation-delay: 1.4s;
+    background: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+    margin: -10px 0 20px;
+}
+
+#composer code {
+    background: whitesmoke;
+    border-radius: 3px;
+    color: #666;
+    display: inline-block;
+    font-size: 16px;
+    padding: 16px 32px;
+}
+
+#donation-forms form {
+    display: inline-block;
+}
+
+.banner {
+    background: whitesmoke;
+    width: 356px;
+    height: 300px;
+    padding: 10px;
+    margin: 0 auto;
+    border: 2px solid #ffffff;
+    box-shadow: 0 0 4px #ccc;
+}

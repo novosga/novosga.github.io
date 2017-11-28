@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="Novo SGA é um sistema de gerenciamento de fila de atendimento flexível e adaquado para organizações de todos os tamanhos.">
 
-        <title>Novo SGA: Queue management system</title>
+        <title>Novo SGA: Support queue management system</title>
 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.3.1/css/bulma.min.css">
@@ -15,7 +15,7 @@
 
         <meta property="og:url" content="http://novosga.org">
         <meta property="og:type" content="website">
-        <meta property="og:title" content="Novo SGA: Queue management system">
+        <meta property="og:title" content="Novo SGA: Support queue management system">
         <meta property="og:image" content="https://cdn.rawgit.com/novosga/art/39bf72ac/dist/logo_1200x630.png">
         <meta property="og:image:type" content="image/png">
         <meta property="og:image:width" content="1200">
@@ -25,84 +25,14 @@
         <meta name="twitter:card" content="summary_large_image">
         <meta name="twitter:site" content="@novosga">
         <meta name="twitter:creator" content="@novosga">
-        <meta name="twitter:title" content="Novo SGA: Queue management system">
+        <meta name="twitter:title" content="Novo SGA: Support queue management system">
         <meta name="twitter:image" content="https://cdn.rawgit.com/novosga/art/39bf72ac/dist/logo_1200x630.png">
         <meta name="twitter:description" content="Novo SGA é um sistema de gerenciamento de fila de atendimento flexível e adaquado para organizações de todos os tamanhos.">
 
         <link rel="icon" type="image/png" href="https://cdn.rawgit.com/novosga/art/d50d3d42/dist/favicon.png">
         <meta name="theme-color" content="#2095f2">
 
-        <style>
-            .is-primary {
-                background-color: #428bca !important;
-            }
-
-            .hero-main1 {
-                background-color: #8EC1DA;
-                background-image: url(http://www.novosga.org/img/clouds.png);
-                background-position: center bottom;
-                background-repeat: repeat-x;
-            }
-
-            .hero-main1 .hero-head {
-                background-color: #8EC1DA;
-            }
-
-            .hero-main .nav-item img {
-                max-height: 2.75rem;
-            }
-            
-            #b {
-                box-shadow: 1px 10px 10px #ddd;
-                border-radius: 24px;
-                display: inline-block;
-                height: 240px;
-                padding: 20px;
-                margin-bottom: 40px;
-                width: 240px;
-            }
-            
-            #b img:hover {
-                -webkit-animation: spin .3s ease;
-                -moz-animation: spin .3s ease;
-                animation: spin .3s ease;
-            }
-
-            @-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
-            @-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
-            @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
-
-            #composer {
-                -webkit-box-align: center;
-                  -ms-flex-align: center;
-                      align-items: center;
-                -webkit-animation: fadeIn 500ms both;
-                      animation: fadeIn 500ms both;
-                -webkit-animation-delay: 1.4s;
-                      animation-delay: 1.4s;
-                background: none;
-                display: -webkit-box;
-                display: -ms-flexbox;
-                display: flex;
-                -webkit-box-pack: center;
-                  -ms-flex-pack: center;
-                      justify-content: center;
-                margin: -10px 0 20px;
-            }
-
-            #composer code {
-                background: whitesmoke;
-                border-radius: 3px;
-                color: #666;
-                display: inline-block;
-                font-size: 16px;
-                padding: 16px 32px;
-            }
-
-            #donation-forms form {
-                display: inline-block;
-            }
-        </style>
+        <link rel="stylesheet" type="text/css" href="css/main.css">
     </head>
     <body class="layout-default">
         <section class="hero is-medium has-text-centered hero-main">
@@ -159,22 +89,40 @@
             </div>
             <div class="hero-body">
                 <div class="container">
-                    <p id="b">
-                        <img src="https://cdn.rawgit.com/novosga/art/d50d3d42/dist/favicon.png">
-                    </p>
-                    <h1 class="title">
-                        Novo <strong>SGA</strong>
-                    </h1>
-                    <h2 class="subtitle">
-                        <strong>Queue</strong> management system
-                    </h2>
-                    <h2 class="subtitle is-hidden">
-                        Sistema de gerenciamento de <strong>fila</strong> de <strong>atendimento</strong>
-                    </h2>
-                    <pre id="composer"><code>composer create-project novosga/novosga</code></pre>
-                    <div class="block">
-                        <iframe src="https://ghbtns.com/github-btn.html?user=novosga&repo=novosga&type=star&count=true&size=large" frameborder="0" scrolling="0" width="130" height="30"></iframe>
-                        <iframe src="https://ghbtns.com/github-btn.html?user=novosga&repo=novosga&type=fork&count=true&size=large" frameborder="0" scrolling="0" width="130" height="30"></iframe>
+                    <div class="columns is-vcentered">
+                        <div class="column is-6">
+                            <p id="b">
+                                <img src="https://cdn.rawgit.com/novosga/art/d50d3d42/dist/favicon.png">
+                            </p>
+                            <h1 class="title">
+                                Novo <strong>SGA</strong>
+                            </h1>
+                            <h2 class="subtitle">
+                                <strong>Support queue</strong> management system
+                            </h2>
+                            <h2 class="subtitle is-hidden">
+                                Sistema de gerenciamento de <strong>fila</strong> de <strong>atendimento</strong>
+                            </h2>
+                            <pre id="composer"><code>composer create-project novosga/novosga</code></pre>
+                            <div class="block">
+                                <iframe src="https://ghbtns.com/github-btn.html?user=novosga&repo=novosga&type=star&count=true&size=large" frameborder="0" scrolling="0" width="130" height="30"></iframe>
+                                <iframe src="https://ghbtns.com/github-btn.html?user=novosga&repo=novosga&type=fork&count=true&size=large" frameborder="0" scrolling="0" width="130" height="30"></iframe>
+                            </div>
+                        </div>
+
+                        <div class="column is-5">
+                            <div class="banner">
+                                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                                <!-- colorful-336x280 -->
+                                <ins class="adsbygoogle"
+                                     style="display:inline-block;width:336px;height:280px"
+                                     data-ad-client="ca-pub-4035316215618754"
+                                     data-ad-slot="5183485714"></ins>
+                                <script>
+                                (adsbygoogle = window.adsbygoogle || []).push({});
+                                </script>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -277,7 +225,7 @@
                 </div>
             </div>
         </footer>
-        
+
         <script>
           (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
           (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -289,4 +237,3 @@
         </script>
     </body>
 </html>
-
