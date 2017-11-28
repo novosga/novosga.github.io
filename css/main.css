@@ -70,10 +70,14 @@
 
 .banner {
     background: whitesmoke;
-    width: 356px;
-    height: 300px;
-    padding: 10px;
+    max-width: 356px;
     margin: 0 auto;
     border: 2px solid #ffffff;
     box-shadow: 0 0 4px #ccc;
+}
+
+@media screen and (min-width: 380px) {
+    .banner {
+        padding: 10px;
+    }
 }
