@@ -1,0 +1,231 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Instalação &mdash; Novo SGA 1.1.4 documentação</title>
+    
+    <link rel="stylesheet" href="_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.1.4',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <link rel="author" title="Sobre estes documentos" href="about.html" />
+    <link rel="top" title="Novo SGA 1.1.4 documentação" href="index.html" />
+    <link rel="next" title="Usando o Novo SGA" href="using.html" />
+    <link rel="prev" title="Sobre" href="about.html" /> 
+<style type="text/css">
+
+div.admonition {
+    font-size: 0.9em;
+    margin: 1em 0 1em 0;
+    border: 1px solid #EEE;
+    background-color: #F7F7F7;
+    padding: 0;
+    -moz-box-shadow: 0px 8px 6px -8px #93a1a1;
+    -webkit-box-shadow: 0px 8px 6px -8px #93A1A1;
+    box-shadow: 0px 8px 6px -8px #93A1A1;
+}
+
+div.admonition p {
+    margin: 0.5em 1em 0.5em 1em;
+    padding: 0.2em;
+    display: block !important;
+}
+
+div.admonition p.admonition-title {
+    margin: 0;
+    padding: 0.2em 0 0.2em 0.6em;
+    color: white;
+    border-bottom: 1px solid #EEE8D5;
+    font-weight: bold;
+    background-color: #268BD2;
+    display: block !important;
+}
+
+.highlight pre {
+    background: #073642;
+    color: #F1F1F1;
+}
+
+div.hint p.admonition-title, div.tip p.admonition-title { background-color: #859900; }
+div.warning p.admonition-title, div.important p.admonition-title { background-color: #CB4B16; }
+
+.figure.align-center, object.align-center {
+    background-color: #f1f1f1;
+    border: 1px solid #CCC;
+    margin: 10px 0;
+}
+
+.figure.align-center img {
+    margin: 10px;
+    border: 1px solid #ccc;
+}
+
+div.body p.caption {
+    margin: 0;
+    padding: 5px;
+    background-color: #e1e1e1;
+}
+
+</style>
+
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navegação</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Índice Geral"
+             accesskey="I">índice</a></li>
+        <li class="right" >
+          <a href="using.html" title="Usando o Novo SGA"
+             accesskey="N">próximo</a> |</li>
+        <li class="right" >
+          <a href="about.html" title="Sobre"
+             accesskey="P">anterior</a> |</li>
+        <li><a href="index.html">Novo SGA 1.1.4 documentação</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="instalacao">
+<span id="install"></span><h1>Instalação<a class="headerlink" href="#instalacao" title="Link permanente para este título">¶</a></h1>
+<p>A parte web do Novo SGA possui como requisito principal o PHP 5.3 (ou superior), com módulo PDO instalado, um servidor HTTP (Apache2, Nginx, etc), além de um dos bancos de dados a seguir: PostgreSQL 8+, MySQL 5+ ou MS SQL.</p>
+<p>Nessa documentação será abordada a instalação do PHP 5.3 no Apache2, e utilizando o PostgreSQL 9 como banco de dados, na plataforma Linux (distribuições baseadas em Debian).</p>
+<div class="section" id="baixando-e-instalando">
+<h2>Baixando e instalando<a class="headerlink" href="#baixando-e-instalando" title="Link permanente para este título">¶</a></h2>
+<p>Para distribuíções baseadas em Debian/Ubuntu:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>sudo apt-get install postgresql libapache2-mod-php5 php5-pgsql curl php5-mcrypt
+</pre></div>
+</div>
+<p>Outro passo fundamental é instalar o Composer para pode baixar e instalar automaticamente as dependências do projeto.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>curl -sS https://getcomposer.org/installer | php
+<span class="nv">$ </span>mv composer.phar /usr/local/bin/composer
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Aviso</p>
+<p class="last">Caso o comando <strong>curl</strong> não esteja instalado: $ sudo apt-get install curl</p>
+</div>
+<p>Baixando e instalando o projeto:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span><span class="nb">cd</span> /var/www
+<span class="nv">$ </span>composer create-project novosga/novosga novosga <span class="s2">&quot;1.*&quot;</span>
+</pre></div>
+</div>
+<p>Após término da operação, dar acesso ao usuário do Apache no diretório do projeto:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>sudo chown www-data:www-data /var/www/novosga
+</pre></div>
+</div>
+<p>Por fim, habilitar o módulo rewrite do Apache2:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>sudo a2enmod rewrite
+</pre></div>
+</div>
+</div>
+<div class="section" id="instalador-web">
+<h2>Instalador Web<a class="headerlink" href="#instalador-web" title="Link permanente para este título">¶</a></h2>
+<p>Depois de concluir a etapa de instalação as dependências, agora basta apenas acessar a aplicação via navegador web e seguir os passos do instalador web: <a class="reference external" href="http:/">http:/</a>/&lt;servidor&gt;/novosga/public.</p>
+<p>Segue abaixo os screenshots das etapas do instalador:</p>
+</div>
+<div class="section" id="painel">
+<h2>Painel<a class="headerlink" href="#painel" title="Link permanente para este título">¶</a></h2>
+<p>Com o Painel Web, basta baixar e extrair o pacote zip a partir do link a seguir: <a class="reference external" href="https://github.com/novosga/painel-web/archive/master.zip">https://github.com/novosga/painel-web/archive/master.zip</a></p>
+<p>Extraia o pacote no diretório www (htdocs, inetpub, etc.) do seu servidor HTTP (no caso do Apache2 em /var/www) e acesse <a class="reference external" href="http:/">http:/</a>/&lt;nome_do_servidor&gt;/painel-web-master.</p>
+<p>Com o painel carregado aparecerá no canto superior direito o menu com o item Configuração. Ao clicar no mesmo aparecerá uma janela para informar a URL do Novo SGA:</p>
+<div class="admonition warning">
+<p class="first admonition-title">Aviso</p>
+<p>A URL do Novo SGA é a mesma utilizada para acessar o sistema, aonde aponta para o diretório novosga/public.</p>
+<p class="last"><strong>Ex</strong>: <a class="reference external" href="http:/">http:/</a>/&lt;nome_do_servidor_do_novosga&gt;/novosga/public</p>
+</div>
+<p>Ao sair do campo, e caso a URL informada esteja correta (abra antes em uma nova aba para ver se está correta), no campo abaixo serão carregadas todas as Unidades disponíveis, e por sua vez, ao <strong>selecionar uma Unidade</strong>, exibirá abaixo todos os seus <strong>serviços</strong>.</p>
+<p>Feito isso, basta clicar em Salvar.</p>
+<p><em>Autor da seção: Rogério Lino &lt;<a class="reference external" href="mailto:rogeriolino&#37;&#52;&#48;gmail&#46;com">rogeriolino<span>&#64;</span>gmail<span>&#46;</span>com</a>&gt;</em></p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="index.html">
+              <img class="logo" src="_static/logo.png" alt="Logo"/>
+            </a></p>
+  <h3><a href="index.html">Tabela de Conteúdo</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Instalação</a><ul>
+<li><a class="reference internal" href="#baixando-e-instalando">Baixando e instalando</a></li>
+<li><a class="reference internal" href="#instalador-web">Instalador Web</a></li>
+<li><a class="reference internal" href="#painel">Painel</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Tópico anterior</h4>
+  <p class="topless"><a href="about.html"
+                        title="capítulo anterior">Sobre</a></p>
+  <h4>Próximo tópico</h4>
+  <p class="topless"><a href="using.html"
+                        title="próximo capítulo">Usando o Novo SGA</a></p>
+  <h3>Esta Página</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/install.txt"
+           rel="nofollow">Exibir Fonte</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Pesquisa rápida</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Ir" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Digite os termos da busca ou o nome de um módulo, classe ou função.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navegação</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Índice Geral"
+             >índice</a></li>
+        <li class="right" >
+          <a href="using.html" title="Usando o Novo SGA"
+             >próximo</a> |</li>
+        <li class="right" >
+          <a href="about.html" title="Sobre"
+             >anterior</a> |</li>
+        <li><a href="index.html">Novo SGA 1.1.4 documentação</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, Novo SGA.
+      Criado usando <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    </div>
+  </body>
+</html>
