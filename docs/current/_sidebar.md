@@ -1,4 +1,5 @@
 - Instalação
+  - [Linux](install-linux.md)
   - [Docker](install-docker.md)
 
 - Customização

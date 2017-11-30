@@ -1,5 +1,7 @@
 # Instalação via Docker
 
+É necessário ter o Docker instalado no ambiente: https://docs.docker.com/engine/installation/
+
 ## Container simples
 
 Executando um simples container:
