@@ -2,6 +2,8 @@
 
 É necessário ter o Docker instalado no ambiente: https://docs.docker.com/engine/installation/
 
+!> Formato da URL de conexão com o banco de dados: http://docs.doctrine-project.org/projects/doctrine-dbal/en/latest/reference/configuration.html#connecting-using-a-url
+
 ## Container simples
 
 Executando um simples container:
@@ -9,8 +11,7 @@ Executando um simples container:
 ```
 docker run --rm \
   -p 80:80 -p 2020:2020
-  -e DATABASE_URL="mysql://novosga@mysqldb:3306/novosga2?charset=utf8mb4&serverVersion=5.7" \
-  -e DATABASE_PASS="MySQL_App_P@ssW0rd!" \
+  -e DATABASE_URL="mysql://novosga:MySQL_App_P4ssW0rd@mysqldb:3306/novosga2?charset=utf8mb4&serverVersion=5.7" \
   novosga/novosga:latest
 ```
 
@@ -33,8 +34,7 @@ services:
     environment:
       APP_ENV: 'prod'
       # database connection
-      DATABASE_URL: 'mysql://novosga@mysqldb:3306/novosga2?charset=utf8mb4&serverVersion=5.7'
-      DATABASE_PASS: 'MySQL_App_P@ssW0rd!'
+      DATABASE_URL: 'mysql://novosga:MySQL_App_P4ssW0rd@mysqldb:3306/novosga2?charset=utf8mb4&serverVersion=5.7'
       # default admin user
       NOVOSGA_ADMIN_USERNAME: 'admin'
       NOVOSGA_ADMIN_PASSWORD: '123456'
@@ -60,8 +60,8 @@ services:
     environment:
       MYSQL_USER: 'novosga'
       MYSQL_DATABASE: 'novosga2'
-      MYSQL_ROOT_PASSWORD: 'MySQL_r00t_P@ssW0rd!'
-      MYSQL_PASSWORD: 'MySQL_App_P@ssW0rd!'
+      MYSQL_ROOT_PASSWORD: 'MySQL_r00t_P4ssW0rd'
+      MYSQL_PASSWORD: 'MySQL_App_P4ssW0rd'
 ```
 
 Executando docker-compose:
@@ -74,5 +74,5 @@ Acessar o banco de dados MySQL como `root`:
 
 Dar permissão de acesso para o usuário da aplicação:
 
-    GRANT ALL ON novosga2.* TO 'novosga'@'%' IDENTIFIED BY 'MySQL_App_P@ssW0rd!';
+    GRANT ALL ON novosga2.* TO 'novosga'@'%' IDENTIFIED BY 'MySQL_App_P4ssW0rd';
     quit

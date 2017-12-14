@@ -104,14 +104,16 @@ Configurar timezone:
 
 Criar arquivo `.htaccess` dentro do diretório `public` da aplicação com as configurações de conexão com o banco:
 
+!> Formato da URL de conexão com o banco de dados: http://docs.doctrine-project.org/projects/doctrine-dbal/en/latest/reference/configuration.html#connecting-using-a-url
+
     echo 'Options -MultiViews
     RewriteEngine On
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^(.*)$ index.php [QSA,L]
     SetEnv APP_ENV prod
     SetEnv LANGUAGE pt_BR
-    SetEnv DATABASE_URL mysql://novosga@mysqldb:3306/novosga2?charset=utf8mb4&serverVersion=5.7
-    SetEnv DATABASE_PASS MySQL_App_P@ssW0rd!' > /var/www/novosga/public/.htaccess
+    SetEnv DATABASE_URL mysql://novosga:MySQL_App_P4ssW0rd@mysqldb:3306/novosga2?charset=utf8mb4&serverVersion=5.7
+    ' > /var/www/novosga/public/.htaccess
 
 Reiniciar serviço do Apache2:
 
@@ -128,8 +130,7 @@ Executar comando `install` do Novo SGA:
     chmod +x bin/console
     APP_ENV=prod \
         LANGUAGE=pt_BR \
-        DATABASE_URL="mysql://novosga@mysqldb:3306/novosga2?charset=utf8mb4&serverVersion=5.7" \
-        DATABASE_PASS=MySQL_App_P@ssW0rd! \
+        DATABASE_URL="mysql://novosga:MySQL_App_P4ssW0rd@mysqldb:3306/novosga2?charset=utf8mb4&serverVersion=5.7" \
         bin/console novosga:install
 
 ## NGINX

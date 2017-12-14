@@ -1,5 +1,7 @@
 # Docker Install
 
+!> Database URL format: http://docs.doctrine-project.org/projects/doctrine-dbal/en/latest/reference/configuration.html#connecting-using-a-url
+
 Compose file
 
 ```yaml
@@ -16,8 +18,7 @@ services:
     environment:
       APP_ENV: 'prod'
       # database connection
-      DATABASE_URL: 'mysql://novosga@mysqldb:3306/novosga2?charset=utf8mb4&serverVersion=5.7'
-      DATABASE_PASS: 'MySQL_App_P@ssW0rd!'
+      DATABASE_URL: 'mysql://novosga:MySQL_App_P4ssW0rd@mysqldb:3306/novosga2?charset=utf8mb4&serverVersion=5.7'
       # default admin user
       NOVOSGA_ADMIN_USERNAME: 'admin'
       NOVOSGA_ADMIN_PASSWORD: '123456'
@@ -40,7 +41,7 @@ services:
     environment:
       MYSQL_USER: 'novosga'
       MYSQL_DATABASE: 'novosga2'
-      MYSQL_ROOT_PASSWORD: 'MySQL_r00t_P@ssW0rd!'
+      MYSQL_ROOT_PASSWORD: 'MySQL_r00t_P4ssW0rd'
 ```
 
 Running docker-compose
@@ -53,7 +54,7 @@ Log in on MySQL database as root:
 
 Grant access to application user:
 
-    GRANT ALL ON novosga2.* TO 'novosga'@'%' IDENTIFIED BY 'MySQL_App_P@ssW0rd!';
+    GRANT ALL ON novosga2.* TO 'novosga'@'%' IDENTIFIED BY 'MySQL_App_P4ssW0rd';
     quit
 
 
