@@ -8,7 +8,9 @@ Passo-a-passo para instalação do Novo SGA no GNU/Linux para as principais dist
     - Ubuntu 14.04+ ou
     - Debian 8+ ou
     - CentOS / RHEL
-- MySQL 5.7 **instalado**
+- MySQL 5.7 **já instalado**
+- PHP 7.1+
+- Apache2 ou NGINX
 
 ## PHP 7.1
 
@@ -74,9 +76,17 @@ Habilitar os módulos `rewrite` e `env` do Apache2.
 
     Editar arquivo /etc/httpd/conf.modules.d/00-base.conf manualmente
 
-Mover o diretório da aplicação já instalada e alterar o dono e dar permissão de escrita no diretório `var` da aplicação:
+Mover o diretório da aplicação já instalada:
 
     sudo mv ~/novosga /var/www/
+
+Preparar o cache da aplicação para o ambiente de produção:
+    
+    bin/console cache:clear --no-debug --no-warmup --env=prod
+    bin/console cache:warmup --env=prod
+    
+Alterar o dono e dar permissão de escrita no diretório `var` da aplicação:
+
     sudo chown www-data:www-data -R /var/www/novosga
     sudo chmod +w -R /var/www/novosga/var/
 
@@ -127,7 +137,6 @@ Reiniciar serviço do Apache2:
 
 Executar comando `install` do Novo SGA:
 
-    chmod +x bin/console
     APP_ENV=prod \
         LANGUAGE=pt_BR \
         DATABASE_URL="mysql://novosga:MySQL_App_P4ssW0rd@mysqldb:3306/novosga2?charset=utf8mb4&serverVersion=5.7" \
