@@ -48,7 +48,7 @@ Baixar **Composer**
 
 Criar o projeto:
 
-    php composer.phar create-project "novosga/novosga:v2.0.0-RC2" ~/novosga
+    php composer.phar create-project "novosga/novosga:v2.0.0-RC3" ~/novosga
 
 Instalar e configurar servidor HTTP: [Apache2](install-linux.md#Apache2) ou [NGINX](install-linux.md#NGINX).
 
