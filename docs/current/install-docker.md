@@ -10,7 +10,7 @@ Executando um simples container:
 
 ```
 docker run --rm \
-  -p 80:80 -p 2020:2020
+  -p 80:80 -p 2020:2020 \
   -e DATABASE_URL="mysql://novosga:MySQL_App_P4ssW0rd@mysqldb:3306/novosga2?charset=utf8mb4&serverVersion=5.7" \
   novosga/novosga:latest
 ```
