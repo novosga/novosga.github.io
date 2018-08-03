@@ -40,7 +40,7 @@ CentOS / RHEL 7.2 & 7.3
     sudo yum install php71 php71-php-curl php71-php-cli php71-php-mbstring php71-php-zip php71-php-xml php71-php-pdo php71-php-mysql
 
 
-## Novo SGA v2.x
+## Novo SGA v2.0
 
 Baixar **Composer**
 
