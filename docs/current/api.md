@@ -11,3 +11,4 @@ Rotas da API do Novo SGA.
 | GET | /api/locais | Retorna os locais de atendimentos. |
 | GET | /api/usuarios | Retorna os usuários do sistema. |
 | POST | /api/distribui | Distribui uma nova senha para atendimento. Requer autenticação, um access_token válido e ativo. |
+| GET | /api/print | Print a ticket. Requer autenticação, um access_token válido e ativo, um hash. |
