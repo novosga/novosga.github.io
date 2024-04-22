@@ -63,8 +63,11 @@ services:
       # Set TimeZone and locale
       TZ: 'America/Sao_Paulo'
       LANGUAGE: 'pt_BR'
-      # Endereço do serviço Mercure
-      MERCURE_PUBLIC_URL: http://127.0.0.1:3000/.well-known/mercure
+      # Endereço Mercure para publicar mensagem (onde "mercure" é o nome do host)
+      # esse endereço será chamado internamente via o PHP
+      MERCURE_PUBLIC_URL: http://mercure:3000/.well-known/mercure
+      # Endereço Mercure para consumir mensagem
+      # esse endereço será chamado via o navegador web
       MERCURE_CONSUMER_URL: http://127.0.0.1:3000/.well-known/mercure
   mercure:
     image: novosga/mercure:v0.11
