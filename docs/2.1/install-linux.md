@@ -9,7 +9,7 @@ Passo-a-passo para instalação do Novo SGA no GNU/Linux para as principais dist
     - Debian 8+ ou
     - CentOS / RHEL
 - MySQL 5.7 **já instalado**
-- PHP 7.1+
+- PHP 7.2
 - Apache2 ou NGINX
 
 ## PHP 7.1

@@ -12,7 +12,7 @@ Executando um simples container:
 docker run --rm \
   -p 80:80 -p 2020:2020 \
   -e DATABASE_URL="mysql://novosga:MySQL_App_P4ssW0rd@mysqldb:3306/novosga2?charset=utf8mb4&serverVersion=5.7" \
-  novosga/novosga:v2.0
+  novosga/novosga:2.0
 ```
 
 ## Docker Compose
@@ -24,7 +24,7 @@ version: '2'
 
 services:
   novosga:
-    image: novosga/novosga:v2.0
+    image: novosga/novosga:2.0
     restart: always
     depends_on:
       - mysqldb

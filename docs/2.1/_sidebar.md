@@ -2,6 +2,8 @@
   - [Linux](/v2.1/install-linux.md)
   - [Docker](/v2.1/install-docker.md)
 
+- [Desenvolvimento](/2.1/development.md)
+
 - Customização
   - [Configuração](/v2.1/configuration.md)
 

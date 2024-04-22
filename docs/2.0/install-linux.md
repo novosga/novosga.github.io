@@ -9,7 +9,7 @@ Passo-a-passo para instalação do Novo SGA no GNU/Linux para as principais dist
     - Debian 8+ ou
     - CentOS / RHEL
 - MySQL 5.7 **já instalado**
-- PHP 7.1+
+- PHP 7.1
 - Apache2 ou NGINX
 
 ## PHP 7.1
@@ -44,7 +44,7 @@ CentOS / RHEL 7.2 & 7.3
 
 Baixar **Composer**
 
-    curl -fSL https://getcomposer.org/composer.phar -o composer.phar
+    curl -fSL https://getcomposer.org/download/1.10.27/composer.phar -o composer.phar
 
 Criar o projeto:
 

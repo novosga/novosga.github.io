@@ -9,7 +9,7 @@ version: '2'
 
 services:
   novosga:
-    image: novosga/novosga:v2.0
+    image: novosga/novosga:2.0
     restart: always
     depends_on:
       - mysqldb

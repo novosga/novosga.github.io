@@ -13,7 +13,7 @@ Executando um simples container:
 docker run --rm \
   -p 80:80 \
   -e DATABASE_URL="mysql://novosga:MySQL_App_P4ssW0rd@mysqldb:3306/novosga2?charset=utf8mb4&serverVersion=5.7" \
-  novosga/novosga:v2.1
+  novosga/novosga:2.1
 
 # serviço mercure para troca de mensagens
 docker run --rm -it \
@@ -33,7 +33,7 @@ version: '2'
 
 services:
   novosga:
-    image: novosga/novosga:v2.1
+    image: novosga/novosga:2.1
     restart: always
     depends_on:
       - mysqldb
@@ -63,6 +63,9 @@ services:
       # Set TimeZone and locale
       TZ: 'America/Sao_Paulo'
       LANGUAGE: 'pt_BR'
+      # Endereço do serviço Mercure
+      MERCURE_PUBLIC_URL: http://127.0.0.1:3000/.well-known/mercure
+      MERCURE_CONSUMER_URL: http://127.0.0.1:3000/.well-known/mercure
   mercure:
     image: novosga/mercure:v0.11
     restart: always
