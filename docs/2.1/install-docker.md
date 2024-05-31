@@ -39,7 +39,6 @@ services:
       - mysqldb
     ports:
       - "80:80"
-      - "2020:2020"
     environment:
       APP_ENV: 'prod'
       # database connection
@@ -62,7 +61,7 @@ services:
       NOVOSGA_PLACE_NAME: 'Guichê'
       # Set TimeZone and locale
       TZ: 'America/Sao_Paulo'
-      LANGUAGE: 'pt_BR'
+      APP_LANGUAGE: 'pt_BR'
       # Endereço Mercure para publicar mensagem (onde "mercure" é o nome do host)
       # esse endereço será chamado internamente via o PHP
       MERCURE_PUBLIC_URL: http://mercure:3000/.well-known/mercure
