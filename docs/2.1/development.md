@@ -14,7 +14,7 @@ cd novosga/
 Rodar o comando abaixo dentro do diretório do novosga, que será compartilhado via volume:
 
 ```sh
-docker run --name=novosga-21-dev -it -v './:/var/www/app' -p 8000:8000 php:7.1.21-cli /bin/bash
+docker run --name=novosga-21-dev -it -v './:/var/www/app' -p 8000:8000 php:7.2.34-cli /bin/bash
 ```
 
 Uma vez criado o container, quando quiser iniciá-lo novamente, basta utilizar o nome informado no comando anterior:
@@ -67,9 +67,16 @@ php bin/console novosga:install
 
 ## Iniciar servidor web de desenvolvimento
 
+Primeiro é necessário baixar o Symfony CLI
+
+```
+curl -sS https://get.symfony.com/cli/installer | bash
+mv /root/.symfony5/bin/symfony /usr/local/bin/symfony
+```
+
 Depois de iniciado o servidor de desenvolvimento basta abrir a URL [127.0.0.1:8000](http://127.0.0.1:8000/)
 
 ```sh
-php bin/console server:run 0.0.0.0:8000
+symfony server:start
 ```
 
