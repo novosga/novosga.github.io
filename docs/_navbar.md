@@ -3,6 +3,6 @@
   - [v2.0](/2.0/)
   - [v2.1 (current)](/2.1/)
 
-<!-- - Translations
+- Translations
   - [🇧🇷 Português](/)
-  - [:uk: English](/en/) -->
+  - [:uk: English](/en/)

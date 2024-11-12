@@ -1,8 +1,22 @@
+const updatePageLang = () => {
+  const matches = location.hash.match(/#\/(en|es)\//) ?? []
+  const lang = matches[1] ?? 'pt-br';
+  document.documentElement.setAttribute('lang', lang);
+}
+
+window.addEventListener('hashchange', updatePageLang);
+document.addEventListener('DOMContentLoaded', updatePageLang);
+
 window.$docsify = {
   alias: {
     '/.*/_navbar.md': '/_navbar.md',
     // "/(\w{2})/v(\d)[.](\d+)/(.*)": "$1/$2.$3/$4",
-    "/v([0-9]+).([0-9]+)/(.*)": "/$1.$2/$3",
+    // "/v([0-9]+).([0-9]+)/(.*)": "/$1.$2/$3",
+  },
+  notFoundPage: {
+    '/': '_404.md',
+    '/en': 'en/_404.md',
+    '/es': 'es/_404.md',
   },
   fallbackLanguages: ["pt", "en"],
   name: 'Novo SGA',
@@ -34,7 +48,7 @@ window.$docsify = {
     },
     function (hook, vm) {
       hook.beforeEach(function (html) {
-        var url = 'https://github.com/novosga/novosga.github.io/blob/master/doc/' + vm.route.file
+        var url = 'https://github.com/novosga/novosga.github.io/blob/master/docs/' + vm.route.file
         var editHtml = '[:memo: Edit Document](' + url + ')\n'
 
         return html

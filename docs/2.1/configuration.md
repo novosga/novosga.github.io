@@ -7,20 +7,18 @@ Por padrão o Novo SGA vem com um arquivo chamado `config/app.default.php` aonde
 ```php
 <?php
 
-/*
- * Default Novo SGA configuration, please don't edit this file.
- * For custom configuration make a copy named app.php in the same directory
- */
+use Novosga\Entity\Unidade;
+use Novosga\Entity\Usuario;
 
 return [
     'queue' => [
         /**
          * Queue ordering
-         * @param \Novosga\Entity\Unidade $unidade
-         * @param \Novosga\Entity\Usuario $usuario (optional)
+         * @param Unidade $unidade
+         * @param Usuario $usuario (optional)
          * @return array
          */
-        'ordering' =>  function (\Novosga\Entity\Unidade $unidade, \Novosga\Entity\Usuario $usuario = null) {
+        'ordering' =>  function (Unidade $unidade, Usuario $usuario = null) {
             $ordering = [];
 
             if ($usuario) {
