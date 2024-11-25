@@ -56,7 +56,7 @@ echo 'APP_ENV="dev"' >> .env.local
 echo 'APP_ENV="dev"' >> .env.local
 # Endereço Mercure para publicar mensagem (onde "mercure" é o nome do host)
 # esse endereço será chamado internamente via o PHP
-echo 'MERCURE_PUBLIC_URL=http://mercure:3000/.well-known/mercure' >> .env.local
+echo 'MERCURE_PUBLISH_URL=http://mercure:3000/.well-known/mercure' >> .env.local
 # Endereço Mercure para consumir mensagem
 # esse endereço será chamado via o navegador web
 echo 'MERCURE_CONSUMER_URL=http://127.0.0.1:3000/.well-known/mercure' >> .env.local
