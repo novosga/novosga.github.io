@@ -5,8 +5,6 @@
 Compose file
 
 ```yaml
-version: '2'
-
 services:
   novosga:
     image: novosga/novosga:2.0

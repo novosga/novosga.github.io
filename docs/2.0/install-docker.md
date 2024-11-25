@@ -20,8 +20,6 @@ docker run --rm \
 Criar arquivo docker-compose.yml com o conteúdo abaixo:
 
 ```yaml
-version: '2'
-
 services:
   novosga:
     image: novosga/novosga:2.0
