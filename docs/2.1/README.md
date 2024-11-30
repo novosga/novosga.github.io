@@ -1,7 +1,7 @@
 # Novo SGA v2.1
 
-O Novo SGA é um sistema para gerenciamento de fila de atendimento em locais de atendimento ao público.
+Novo SGA es un sistema para administrar filas de atención al público en locales.
 
-Com o sistema Novo SGA é possível configurar serviços, prioridades e atendentes da maneira que melhor se adapta às necessidades da organização.
+Con el sistema Novo SGA es posible configurar servicios, prioridades y agentes del modo que mejor se adapte a las necesidades de la organización.
 
-Para maiores informações, visite https://novosga.org
+Para mayor información, visite https://novosga.org
