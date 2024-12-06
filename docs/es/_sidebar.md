@@ -1,0 +1,3 @@
+- Versiones
+  - [v2.0](/es/2.0/)
+  - [v2.1 (actual)](/es/2.1/)
