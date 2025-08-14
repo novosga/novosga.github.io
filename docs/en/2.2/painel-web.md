@@ -1,25 +1,25 @@
-# Painel Web
+# Web Panel
 
-Painel Web é a aplicação responsável por exibir as senhas chamadas pelo atendente.
+Web Panel is the application responsible for displaying the tickets called by the attendant.
 
-## Instalação
+## Installation
 
-Para instalar bastar fazer download da [última versão disponível](https://github.com/novosga/painel-web/releases) para a sua plataforma, Linux ou Windows, extrair, e depois executar o binário.
+To install, just download the [latest available version](https://github.com/novosga/painel-web/releases) for your platform, Linux or Windows, extract it, and then run the binary.
 
-## Configuração
+## Configuration
 
-| Campo         | Descrição                                                                                  |
+| Field         | Description                                                                                |
 | ------------- | ------------------------------------------------------------------------------------------ |
-| Servidor      | URL do NovoSGA (Ex: http://127.0.0.1)                                                     |
-| Usuário       | Nome de usuário com acesso ao NovoSGA                                                     |
-| Senha         | Senha do usuário informado                                                                 |
-| Client ID     | ID do cliente gerado na [administração do sistema](administration?id=web-api) (Web API)    |
-| Client Secret | Senha do cliente gerado na [administração do sistema](administration?id=web-api) (Web API) |
-| Unidade       | Unidade de atendimento do painel                                                           |
-| Serviços      | Quais serviços serão chamados no painel                                                    |
-| Alerta        | Som de alerta para tocar quando uma nova senha é chamada                                   |
+| Server        | NovoSGA URL (Ex: http://127.0.0.1)                                                        |
+| User          | Username with access to NovoSGA                                                           |
+| Password      | Password of the informed user                                                              |
+| Client ID     | Client ID generated in the [system administration](administration?id=web-api) (Web API)    |
+| Client Secret | Client secret generated in the [system administration](administration?id=web-api) (Web API) |
+| Unity         | Panel's service unit                                                                    |
+| Services      | Which services will be called on the panel                                                 |
+| Alert         | Alert sound to play when a new ticket is called                                            |
 
 
 ## Github
 
-Todo o código-fonte do Painel Web está disponível no Github. Visite https://github.com/novosga/painel-web
+The entire source code of the Web Panel is available on Github. Visit https://github.com/novosga/painel-web

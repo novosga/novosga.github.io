@@ -1,7 +1,7 @@
 # NovoSGA v2.2
 
-O NovoSGA é um sistema para gerenciamento de fila de atendimento em locais de atendimento ao público.
+NovoSGA is a queue management system for public service locations.
 
-Com o sistema NovoSGA é possível configurar serviços, prioridades e atendentes da maneira que melhor se adapta às necessidades da organização.
+With the NovoSGA system, it is possible to configure services, priorities, and attendants in a way that best suits the organization's needs.
 
-Para maiores informações, visite https://novosga.org
+For more information, visit https://novosga.org

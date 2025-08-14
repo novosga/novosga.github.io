@@ -1,33 +1,33 @@
-# Administração
+# Administration
 
-## Sistema
+## System
 
-Configuração global do sistema. Nesta seção é possível reiniciar todas as senhas (movendo-as para o histórico) e/ou apagar todos os dados de atendimento para um novo início do sistema.
+Global system configuration. In this section, it is possible to reset all tickets (moving them to the history) and/or delete all service data for a new system start.
 
-## Unidades
+## Unities
 
-Cadastro das unidade de atendimento do sistema. Unidade de atendimento é o local físico aonde os atendimentos são executados. Por exemplo: Uma unidade de saúde, um departamento de atendimento ao cliente, ou uma localidade.
+Registration of the system's service units. A service unit is the physical location where services are performed. For example: A health unit, a customer service department, or a locality.
 
-## Serviços
+## Services
 
-Cadastro dos serviços que são realizados no sistema. O serviço é um cadastro global, podendo estar disponível ou não nas unidades cadastradas. Um mesmo serviço pode ser atendido em mais de uma unidade.
+Registration of the services that are performed in the system. The service is a global registration, and may or may not be available in the registered units. The same service can be provided in more than one unit.
 
-## Perfis
+## Profiles
 
-Cadastro dos perfis de acesso ao sistema. Um perfil define quais módulos os usuários poderão acessar. O relacionamento do perfil com o usuário se dar através da `lotação`, que é a configuração de acesso de um usuário à uma `unidade` pelo `perfil` escolhido.
+Registration of system access profiles. A profile defines which modules users can access. The relationship between the profile and the user is through the `assignment`, which is the access configuration of a user to a `unit` for the chosen `profile`.
 
-## Prioridades
+## Priorities
 
-Cadastro das prioridades de atendimento. Por padrão existem duas prioridades cadastradas: `Sem prioridade` e `Prioridade`. A prioridade possui um campo de `peso` que influencia na ordem da fila. Sendo por padrão `Sem prioridade` peso `0` e `Prioridade` peso `1`.
+Registration of service priorities. By default, there are two registered priorities: `No priority` and `Priority`. The priority has a `weight` field that influences the order of the queue. By default, `No priority` has a weight of `0` and `Priority` has a weight of `1`.
 
-## Locais
+## Locations
 
-Cadastro dos locais aonde o atendente realiza o seu atendimento. O local serve para orientar o cliente para que ele saiba para onde se dirigir quando for chamado. Por exemplo: Guichê, sala, mesa.
+Registration of the locations where the attendant performs their service. The location serves to guide the client so that they know where to go when called. For example: Counter, room, table.
 
-## Módulos
+## Modules
 
-Visualização dos módulos disponíveis. É possível habilitar e desabilitar os módulos instalados.
+View of available modules. It is possible to enable and disable installed modules.
 
 ## Web API
 
-Cadastro dos clientes `OAuth2` para integração com outras aplicações via API web do sistema.
+Registration of `OAuth2` clients for integration with other applications via the system's web API.

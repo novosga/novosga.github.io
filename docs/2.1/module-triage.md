@@ -1,3 +1,3 @@
 # Triage module
 
-https://github.com/novosga/triagem-bundle
+https://github.com/novosga/triage-bundle
