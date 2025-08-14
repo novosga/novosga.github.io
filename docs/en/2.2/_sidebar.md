@@ -1,25 +1,25 @@
-- Introdução
-  - [Sobre](/en/2.2/README.md)
-  - [Contribuindo](/en/2.2/contributing.md)
+- Introduction
+  - [About](/en/2.2/README.md)
+  - [Contributing](/en/2.2/contributing.md)
 
-- Instalação
+- Installation
   - [Linux](/en/2.2/install-linux.md)
   - [Docker](/en/2.2/install-docker.md)
 
-- [Desenvolvimento](/en/2.2/development.md)
+- [Development](/en/2.2/development.md)
 
-- Customização
-  - [Configuração](/en/2.2/configuration.md)
+- Customization
+  - [Configuration](/en/2.2/configuration.md)
 
-- Guia
-  - [Administração](/en/2.2/administration.md)
-  - Módulos padrões
-    - [Configurações](/en/2.2/module-settings.md)
-    - [Triagem](/en/2.2/module-triage.md)
+- Guide
+  - [Administration](/en/2.2/administration.md)
+  - Standard Modules
+    - [Settings](/en/2.2/module-settings.md)
+    - [Triage](/en/2.2/module-triage.md)
     - [Monitor](/en/2.2/module-monitor.md)
-    - [Atendimento](/en/2.2/module-attendance.md)
-    - [Usuários](/en/2.2/module-users.md)
+    - [Attendance](/en/2.2/module-attendance.md)
+    - [Users](/en/2.2/module-users.md)
 
-- [Painel web](/en/2.2/painel-web.md)
+- [Web Panel](/en/2.2/painel-web.md)
 
 - [API](/en/2.2/api.md)

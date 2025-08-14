@@ -1,21 +1,21 @@
-# Instalação via Docker
+# Installation via Docker
 
-É necessário ter o Docker instalado no ambiente: https://docs.docker.com/engine/installation/
+It is necessary to have Docker installed in the environment: https://docs.docker.com/engine/installation/
 
-!> Formato da URL de conexão com o banco de dados: http://docs.doctrine-project.org/projects/doctrine-dbal/en/latest/reference/configuration.html#connecting-using-a-url
+!> Database connection URL format: http://docs.doctrine-project.org/projects/doctrine-dbal/en/latest/reference/configuration.html#connecting-using-a-url
 
-## Container simples
+## Simple container
 
-Executando um simples container:
+Running a simple container:
 
 ```sh
-# aplicação base
+# base application
 docker run --rm \
   -p 80:80 \
   -e DATABASE_URL="mysql://novosga:MySQL_App_P4ssW0rd@mysqldb:3306/novosga2?charset=utf8mb4&serverVersion=5.7" \
   novosga/novosga:2.2
 
-# serviço mercure para troca de mensagens
+# mercure service for message exchange
 docker run --rm -it \
     -p 3000:3000 \
     -e 'SERVER_NAME=:3000' \
@@ -26,7 +26,7 @@ docker run --rm -it \
 
 ## Docker Compose
 
-Criar arquivo docker-compose.yml com o conteúdo abaixo:
+Create a docker-compose.yml file with the content below:
 
 ```yaml
 services:
@@ -44,27 +44,27 @@ services:
       # default admin user
       NOVOSGA_ADMIN_USERNAME: 'admin'
       NOVOSGA_ADMIN_PASSWORD: '123456'
-      NOVOSGA_ADMIN_FIRSTNAME: 'Administrador'
+      NOVOSGA_ADMIN_FIRSTNAME: 'Administrator'
       NOVOSGA_ADMIN_LASTNAME: 'Global'
       # default unity
-      NOVOSGA_UNITY_NAME: 'Minha unidade'
+      NOVOSGA_UNITY_NAME: 'My unit'
       NOVOSGA_UNITY_CODE: 'U01'
       # default no-priority
       NOVOSGA_NOPRIORITY_NAME: 'Normal'
-      NOVOSGA_NOPRIORITY_DESCRIPTION: 'Atendimento normal'
+      NOVOSGA_NOPRIORITY_DESCRIPTION: 'Normal service'
       # default priority
-      NOVOSGA_PRIORITY_NAME: 'Prioridade'
-      NOVOSGA_PRIORITY_DESCRIPTION: 'Atendimento prioritário'
+      NOVOSGA_PRIORITY_NAME: 'Priority'
+      NOVOSGA_PRIORITY_DESCRIPTION: 'Priority service'
       # default place
-      NOVOSGA_PLACE_NAME: 'Guichê'
+      NOVOSGA_PLACE_NAME: 'Counter'
       # Set TimeZone and locale
       TZ: 'America/Sao_Paulo'
-      APP_LANGUAGE: 'pt_BR'
-      # Endereço Mercure para publicar mensagem (onde "mercure" é o nome do host)
-      # esse endereço será chamado internamente via o PHP
+      APP_LANGUAGE: 'en_US'
+      # Mercure address to publish message (where "mercure" is the host name)
+      # this address will be called internally via PHP
       MERCURE_PUBLISH_URL: http://mercure:3000/.well-known/mercure
-      # Endereço Mercure para consumir mensagem
-      # esse endereço será chamado via o navegador web
+      # Mercure address to consume message
+      # this address will be called via the web browser
       MERCURE_CONSUMER_URL: http://127.0.0.1:3000/.well-known/mercure
       # the default token is signed with the secret key: !ChangeMe!
       MERCURE_JWT_TOKEN": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXJjdXJlIjp7InB1Ymxpc2giOltdfX0.Oo0yg7y4yMa1vr_bziltxuTCqb8JVHKxp-f_FwwOim0"
@@ -91,15 +91,15 @@ services:
       TZ: 'America/Sao_Paulo'
 ```
 
-Executando docker-compose:
+Running docker-compose:
 
     docker-compose up -d
 
-Acessar o banco de dados MySQL como `root`:
+Access the MySQL database as `root`:
 
     docker-compose exec mysqldb sh -c  'mysql -uroot -p'
 
-Dar permissão de acesso para o usuário da aplicação:
+Grant access permission to the application user:
 
     GRANT ALL ON novosga2.* TO 'novosga'@'%' IDENTIFIED BY 'MySQL_App_P4ssW0rd';
     quit

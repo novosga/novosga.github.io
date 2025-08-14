@@ -1,16 +1,16 @@
-# Instalação no Linux
+# Installation on Linux
 
-Passo-a-passo para instalação do NovoSGA no GNU/Linux para as principais distribuições.
+Step-by-step for installing NovoSGA on GNU/Linux for the main distributions.
 
-**Requisitos**
+**Requirements**
 
 - GNU/Linux:
-    - Ubuntu 20.04+ ou
-    - Debian 10+ ou
+    - Ubuntu 20.04+ or
+    - Debian 10+ or
     - CentOS / RHEL
-- MySQL 8.0 ou PostgreSQL 13+ **(já instalado)**
+- MySQL 8.0 or PostgreSQL 13+ **(already installed)**
 - PHP 8.2
-- Apache2 ou NGINX
+- Apache2 or NGINX
 
 ## PHP 8.2
 
@@ -39,19 +39,19 @@ CentOS / RHEL
 
 ## NovoSGA v2.2
 
-Baixar **Composer**
+Download **Composer**
 
     curl -fSL https://getcomposer.org/composer.phar -o composer.phar
 
-Criar o projeto:
+Create the project:
 
     php composer.phar create-project "novosga/novosga:^2.2" ~/novosga
 
-Instalar e configurar servidor HTTP: [Apache2](install-linux.md#Apache2) ou [NGINX](install-linux.md#NGINX).
+Install and configure HTTP server: [Apache2](install-linux.md#Apache2) or [NGINX](install-linux.md#NGINX).
 
 ## Apache2
 
-Instalar pacote:
+Install package:
 
 **Debian/Ubuntu**
 
@@ -63,7 +63,7 @@ Instalar pacote:
     sudo systemctl enable httpd.service
     sudo systemctl start httpd.service
 
-Habilitar os módulos `rewrite` e `env` do Apache2.
+Enable the `rewrite` and `env` modules of Apache2.
 
 **Debian/Ubuntu**
 
@@ -71,23 +71,23 @@ Habilitar os módulos `rewrite` e `env` do Apache2.
 
 **CentOS/RHEL**
 
-    Editar arquivo /etc/httpd/conf.modules.d/00-base.conf manualmente
+    Edit the /etc/httpd/conf.modules.d/00-base.conf file manually
 
-Mover o diretório da aplicação já instalada:
+Move the already installed application directory:
 
     sudo mv ~/novosga /var/www/
 
-Preparar o cache da aplicação para o ambiente de produção:
+Prepare the application cache for the production environment:
     
     bin/console cache:clear --no-debug --no-warmup --env=prod
     bin/console cache:warmup --env=prod
     
-Alterar o dono e dar permissão de escrita no diretório `var` da aplicação:
+Change the owner and give write permission to the `var` directory of the application:
 
     sudo chown www-data:www-data -R /var/www/novosga
     sudo chmod +w -R /var/www/novosga/var/
 
-Alterar diretório raiz do site e habilitar `.htaccess`:
+Change the root directory of the site and enable `.htaccess`:
 
 **Debian/Ubuntu**
 
@@ -99,7 +99,7 @@ Alterar diretório raiz do site e habilitar `.htaccess`:
     sudo sed -i 's|/var/www/html|/var/www/novosga/public|g' /etc/httpd/conf/httpd.conf
     sudo sed -i 's|AllowOverride None|AllowOverride All|g' /etc/httpd/conf/httpd.conf
 
-Configurar timezone:
+Configure timezone:
 
 **Debian/Ubuntu**
 
@@ -109,20 +109,20 @@ Configurar timezone:
 
     sudo echo 'date.timezone = America/Sao_Paulo' > /etc/php.ini
 
-Criar arquivo `.htaccess` dentro do diretório `public` da aplicação com as configurações de conexão com o banco:
+Create the `.htaccess` file inside the `public` directory of the application with the database connection settings:
 
-!> Formato da URL de conexão com o banco de dados: http://docs.doctrine-project.org/projects/doctrine-dbal/en/latest/reference/configuration.html#connecting-using-a-url
+!> Database connection URL format: http://docs.doctrine-project.org/projects/doctrine-dbal/en/latest/reference/configuration.html#connecting-using-a-url
 
     echo 'Options -MultiViews
     RewriteEngine On
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^(.*)$ index.php [QSA,L]
     SetEnv APP_ENV prod
-    SetEnv LANGUAGE pt_BR
+    SetEnv LANGUAGE en_US
     SetEnv DATABASE_URL mysql://novosga:MySQL_App_P4ssW0rd@mysqldb:3306/novosga2?charset=utf8mb4&serverVersion=5.7
     ' > /var/www/novosga/public/.htaccess
 
-Reiniciar serviço do Apache2:
+Restart the Apache2 service:
 
 **Debian/Ubuntu**
 
@@ -132,10 +132,10 @@ Reiniciar serviço do Apache2:
 
     sudo service httpd restart
 
-Executar comando `install` do NovoSGA:
+Run the NovoSGA `install` command:
 
     APP_ENV=prod \
-        LANGUAGE=pt_BR \
+        LANGUAGE=en_US \
         DATABASE_URL="mysql://novosga:MySQL_App_P4ssW0rd@mysqldb:3306/novosga2?charset=utf8mb4&serverVersion=5.7" \
         bin/console novosga:install
 

@@ -1,89 +1,89 @@
-# Guia de contribuição
+# Contribution Guide
 
-Há várias formas de contribuir para o NovoSGA:
+There are several ways to contribute to NovoSGA:
 
-## Reportando Problemas
+## Reporting Problems
 
-- Acesse a seção Issues do repositório.
-- Verifique se o problema já foi reportado para evitar duplicidade.
-- Forneça o máximo de informações possível sobre o problema, incluindo:
-    - Versão do NovoSGA
-    - Sistema operacional e versão do PHP
-    - Passos para reproduzir o problema
-    - Logs e screenshots, se possível
-
-
-## Sugestões de Melhorias e Funcionalidades
-
-Se você tiver ideias para novas funcionalidades ou melhorias, abra uma Issue de sugestão com uma descrição detalhada. Discuta sua ideia com a comunidade para alinhamento antes de iniciar o desenvolvimento.
+- Access the Issues section of the repository.
+- Check if the problem has already been reported to avoid duplication.
+- Provide as much information as possible about the problem, including:
+    - NovoSGA version
+    - Operating system and PHP version
+    - Steps to reproduce the problem
+    - Logs and screenshots, if possible
 
 
-## Respondendo dúvidas
+## Suggestions for Improvements and Features
 
-Ajude outros usuários respondendo dúvidas de uso ou sobre instalação do sistema.
+If you have ideas for new features or improvements, open a suggestion Issue with a detailed description. Discuss your idea with the community for alignment before starting development.
 
-- [Fórum de discussão](https://discuss.novosga.org/)
-- [Grupo do Telegram](https://t.me/novosga)
 
-## Documentação
+## Answering questions
 
-Sentiu falta de alguma informação importante do sistema, ou uma falta de clareza na documentação do NovoSGA? Ajude a tornar nossa documentação mais clara e abrangente.
+Help other users by answering questions about using or installing the system.
 
-Ao final de cada página há um link para realizar a edição da mesma. Caso deseja solicitar uma nova seção, basta abrir um novo Pull Request para o repositório abaixo:
+- [Discussion forum](https://discuss.novosga.org/)
+- [Telegram group](https://t.me/novosga)
+
+## Documentation
+
+Did you miss any important system information, or a lack of clarity in the NovoSGA documentation? Help make our documentation clearer and more comprehensive.
+
+At the end of each page there is a link to edit it. If you want to request a new section, just open a new Pull Request for the repository below:
 
 https://github.com/novosga/novosga.github.io/
 
-Toda documentação fica no caminho `/docs`.
+All documentation is in the `/docs` path.
 
 
-## Desenvolvimento
+## Development
 
-### Pré-requisitos
+### Prerequisites
 
-Para começar, verifique se você possui os seguintes pré-requisitos:
+To get started, make sure you have the following prerequisites:
 
-- **Git**: para controle de versão
-- **Composer**: para gerenciar dependências PHP
-- **PHP**: verifique a versão definida no arquivo `composer.json`
+- **Git**: for version control
+- **Composer**: to manage PHP dependencies
+- **PHP**: check the version defined in the `composer.json` file
 
-### Processo de Contribuição
+### Contribution Process
 
-#### 1. Crie o fork do repositório
+#### 1. Fork the repository
 
-Clique em "Fork" na página do [NovoSGA](https://github.com/novosga/novosga) para criar uma cópia do repositório em sua conta do GitHub.
+Click "Fork" on the [NovoSGA](https://github.com/novosga/novosga) page to create a copy of the repository in your GitHub account.
 
-#### 2. Clone o repositório Forkado
+#### 2. Clone the Forked repository
 
-Clone o repositório para sua máquina local usando o seguinte comando:
+Clone the repository to your local machine using the following command:
 
 ```bash
-git clone https://github.com/seu-usuario/novosga.git
+git clone https://github.com/your-user/novosga.git
 cd novosga
 ```
 
-#### 3. Crie um branch
+#### 3. Create a branch
 
-Use branches para cada alteração ou melhoria. O nome do branch deve ser descritivo para o que está sendo feito:
+Use branches for each change or improvement. The branch name should be descriptive of what is being done:
 
 ```bash
-git checkout -b minha-contribuicao
+git checkout -b my-contribution
 ```
 
-#### 4. Instale dependências
+#### 4. Install dependencies
 
-Certifique-se de que todas as dependências estão instaladas.
+Make sure all dependencies are installed.
 
 ```bash
 composer install
 ```
 
-#### 5. Implemente as alterações
+#### 5. Implement the changes
 
-Faça as alterações necessárias no código e escreva testes que cubram as funcionalidades adicionadas ou os bugs corrigidos. Certifique-se de que o código esteja limpo, documentado e que siga as práticas de clean code.
+Make the necessary changes to the code and write tests that cover the added features or corrected bugs. Make sure the code is clean, documented, and follows clean code practices.
 
-#### 6. Execute os testes e análises do código
+#### 6. Run tests and code analysis
 
-Antes de enviar suas alterações, execute todos os testes para garantir que tudo esteja funcionando corretamente.
+Before submitting your changes, run all tests to ensure everything is working correctly.
 
 ```bash
 ./vendor/bin/phpunit
@@ -91,47 +91,47 @@ Antes de enviar suas alterações, execute todos os testes para garantir que tud
 ./vendor/bin/phpstan --memory-limit=1g
 ```
 
-#### 7. Faça o commit das mudanças
+#### 7. Commit the changes
 
-Escreva mensagens de commit claras e concisas. Use o seguinte padrão para mensagens de commit:
+Write clear and concise commit messages. Use the following pattern for commit messages:
 
-- `feat:` Para novas funcionalidades
-- `fix:` Para correção de bugs
-- `docs:` Para mudanças na documentação
-- `style:` Ajustes de formatação e estilo
-- `refactor:` Refatoração de código
-- `test:` Adição ou modificação de testes
-
-```bash
-git commit -m "fix: corrigido bug na autenticação de usuários"
-```
-
-#### 8. Envie suas alterações
-
-Envie suas alterações para seu repositório GitHub:
+- `feat:` For new features
+- `fix:` For bug fixes
+- `docs:` For documentation changes
+- `style:` Formatting and style adjustments
+- `refactor:` Code refactoring
+- `test:` Addition or modification of tests
 
 ```bash
-git push origin minha-contribuicao
+git commit -m "fix: fixed bug in user authentication"
 ```
 
-#### 9. Crie um Pull Request
+#### 8. Send your changes
 
-No GitHub, vá até o seu repositório forkado e clique em New Pull Request. Descreva claramente a mudança e inclua referências a quaisquer issues relacionadas.
+Send your changes to your GitHub repository:
 
-> Exemplo de descrição: "Este PR resolve o problema #123 e implementa a funcionalidade de login via autenticação OAuth.
+```bash
+git push origin my-contribution
+```
 
-### Normas de código
+#### 9. Create a Pull Request
 
-Para manter um código consistente, siga estas normas de estilo:
+On GitHub, go to your forked repository and click New Pull Request. Clearly describe the change and include references to any related issues.
 
-- Use PSR-12 como padrão para formatação do PHP.
-- Nomeie variáveis e métodos de forma clara e descritiva.
-- Evite duplicação de código.
-- Adicione documentação para classes, métodos e funções complexas.
+> Example description: "This PR resolves problem #123 and implements the login functionality via OAuth authentication.
 
-### Revisão de Pull Request
+### Code standards
 
-Os mantenedores do NovoSGA revisarão seu Pull Request e poderão sugerir mudanças. Lembre-se:
+To maintain consistent code, follow these style standards:
 
-- Seja receptivo ao feedback.
-- Esteja disposto a discutir sua implementação.
+- Use PSR-12 as the standard for PHP formatting.
+- Name variables and methods clearly and descriptively.
+- Avoid code duplication.
+- Add documentation for complex classes, methods, and functions.
+
+### Pull Request Review
+
+The NovoSGA maintainers will review your Pull Request and may suggest changes. Remember:
+
+- Be receptive to feedback.
+- Be willing to discuss your implementation.

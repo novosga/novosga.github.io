@@ -1,25 +1,25 @@
-# Configuração
+# Configuration
 
-A partir da versão 2.2, foi introduzida uma interface de usuário para gerenciar as configurações do sistmea.
+As of version 2.2, a user interface has been introduced to manage system settings.
 
 <img src="/docs/images/screenshots/2.2/admin-system-pt-br.png">
 
-## Aparência
+## Appearance
 
-Permite escolher o tema e suas variações a partir de uma lista com com mais de 25 opções de tema. Também é possível customizar a imagem da logo tanto na barra de navegação quanto na tela de login.
+It allows you to choose the theme and its variations from a list with more than 25 theme options. It is also possible to customize the logo image both in the navigation bar and on the login screen.
 
 <img src="/docs/images/screenshots/2.2/admin-system-appearance-pt-br.png">
 
-## Ordenação da fila
+## Queue ordering
 
-O administrador do sistema pode definir exatamente quais campos serão utilizados para definir a ordenação da fila de atendimento.
+The system administrator can define exactly which fields will be used to define the order of the service queue.
 
 <img src="/docs/images/screenshots/2.2/admin-system-ordering-pt-br.png">
 
-## Comportamento
+## Behavior
 
-Na seção de comportamento é possível configurar o sistema para intercalar entre senhas prioritárias e normais, evitando que todas as senhas prioritárias sejam atendidas primeiro para então chamar as senhas normais.
+In the behavior section, it is possible to configure the system to interleave between priority and normal tickets, preventing all priority tickets from being served first and then calling normal tickets.
 
-Também é possível habilitar ou desabilitar a função que permite o atendente chamar qualquer senha independente da ordem da fila (fura-fila).
+It is also possible to enable or disable the function that allows the attendant to call any ticket regardless of the queue order (queue jumping).
 
 <img src="/docs/images/screenshots/2.2/admin-system-behavior-pt-br.png">
