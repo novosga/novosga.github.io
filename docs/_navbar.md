@@ -5,5 +5,6 @@
   - [v2.2 (current)](/2.2/)
 
 - Translations
-  - [🇧🇷 Português](/)
+  - [:brazil: Português](/)
   - [:uk: English](/en/)
+  - [:es: Español](/es/)

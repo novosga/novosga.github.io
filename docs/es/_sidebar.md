@@ -1,0 +1,2 @@
+- Versiones
+  - [v2.1 (actual)](/es/2.1/)

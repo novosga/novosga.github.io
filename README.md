@@ -1,4 +1,4 @@
 
 # NovoSGA website
 
-Visit http://novosga.org
+Visit https://novosga.org
