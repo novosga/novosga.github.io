@@ -1,6 +1,6 @@
 # Instalação no Linux
 
-Passo-a-passo para instalação do Novo SGA no GNU/Linux para as principais distribuições.
+Passo-a-passo para instalação do NovoSGA no GNU/Linux para as principais distribuições.
 
 **Requisitos**
 
@@ -40,7 +40,7 @@ CentOS / RHEL 7.2 & 7.3
     sudo yum install php71 php71-php-curl php71-php-cli php71-php-mbstring php71-php-zip php71-php-xml php71-php-pdo php71-php-mysql
 
 
-## Novo SGA v2.0
+## NovoSGA v2.0
 
 Baixar **Composer**
 
@@ -135,7 +135,7 @@ Reiniciar serviço do Apache2:
 
     sudo service httpd restart
 
-Executar comando `install` do Novo SGA:
+Executar comando `install` do NovoSGA:
 
     APP_ENV=prod \
         LANGUAGE=pt_BR \

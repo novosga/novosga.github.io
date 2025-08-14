@@ -19,7 +19,7 @@ window.$docsify = {
     '/es': 'es/_404.md',
   },
   fallbackLanguages: ["pt", "en"],
-  name: 'Novo SGA',
+  name: 'NovoSGA',
   logo: 'images/logo.png',
   repo: 'novosga/novosga.github.io',
   auto2top: true,

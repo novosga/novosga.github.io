@@ -1,4 +1,4 @@
-# Novo SGA v1.x
+# NovoSGA v1.x
 
 !> **Atenção** Você está vendo uma documentação antiga. A versão v1.0.0 foi lançada em Dezembro de 2013.
 
@@ -14,5 +14,5 @@ Fornece uma diversidade de informações gerenciais preciosas, através de relat
 
 As informações gerenciais fornecidas pelo SGA possibilitam aos gestores planejar, acompanhar, monitorar, otimizar e agilizar o atendimento aos clientes. O sistema pode ser utilizado tanto de forma centralizada como descentralizada. Ou seja, pode-se utilizar servidores hospedados centralizadamente ou em cada unidade de atendimento. Porém, o ambiente centralizado oferece mais vantagens, pois os dados estarão concentrados num mesmo banco de dados, possibilitando emitir relatórios e estatísticas completas.
 
-Na versão Novo SGA, a parte web foi totalmente reformulada, deixando mais leve e intuitiva, com uma interface amigável e instalação super fácil. Já no painel, além de melhorias para funcionar em monitores widescreen, foi reescrito em JavaFX.
+Na versão NovoSGA, a parte web foi totalmente reformulada, deixando mais leve e intuitiva, com uma interface amigável e instalação super fácil. Já no painel, além de melhorias para funcionar em monitores widescreen, foi reescrito em JavaFX.
 

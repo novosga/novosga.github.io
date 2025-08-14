@@ -1,3 +1,3 @@
-# Novo SGA
+# NovoSGA
 
 Visit https://novosga.org

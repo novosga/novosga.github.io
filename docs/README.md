@@ -1,3 +1,3 @@
 # Documentação
 
-Navegue na documentação do Novo SGA de acordo com a versão desejada.
+Navegue na documentação do NovoSGA de acordo com a versão desejada.

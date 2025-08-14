@@ -9,7 +9,7 @@ Com o novo atendimento gerado, e de posse da senha, o cliente aguarda pela exibi
 ![flow](_images/flow.png)
 
 
-Fluxo de funcionamento do Novo SGA
+Fluxo de funcionamento do NovoSGA
 
 A senha é formada por um número incremental (único na unidade) prefixada da letra do serviço. No caso do serviço identificado pela letra ‘A’, a primeira senha gerada na unidade para esse serviço será a senha ‘A0001’, já a segunda senha gerada (desta vez para o serviço ‘B’) será ‘B0002’.
 
