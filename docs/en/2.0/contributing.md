@@ -27,7 +27,7 @@ Ajude outros usuários respondendo dúvidas de uso ou sobre instalação do sist
 
 ## Documentação
 
-Sentiu falta de alguma informação importante do sistema, ou uma falta de clareza na documentação do Novo SGA? Ajude a tornar nossa documentação mais clara e abrangente.
+Sentiu falta de alguma informação importante do sistema, ou uma falta de clareza na documentação do NovoSGA? Ajude a tornar nossa documentação mais clara e abrangente.
 
 Ao final de cada página há um link para realizar a edição da mesma. Caso deseja solicitar uma nova seção, basta abrir um novo Pull Request para o repositório abaixo:
 

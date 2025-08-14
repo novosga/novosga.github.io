@@ -5,7 +5,7 @@
     - [Baixando e instalando](/1.0/instalacao-baixando-e-instalando)
     - [Instalador Web](/1.0/instalacao-instalador-web)
     - [Painel](/1.0/instalacao-painel)
-- [Usando o Novo SGA](/1.0/usando)
+- [Usando o NovoSGA](/1.0/usando)
     - [Funcionamento](/1.0/usando-funcionamento)
     - [Login no sistema](/1.0/usando-login-no-sistema)
     - [Tela Inicial](/1.0/usando-tela-inicial)

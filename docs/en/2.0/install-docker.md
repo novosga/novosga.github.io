@@ -56,6 +56,6 @@ Grant access to application user:
     quit
 
 
-Run Novo SGA install
+Run NovoSGA install
 
     docker-compose exec novosga sh -c 'bin/console novosga:install'

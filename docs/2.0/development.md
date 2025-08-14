@@ -42,9 +42,9 @@ curl -fSL https://getcomposer.org/download/1.10.27/composer.phar -o composer.pha
 php composer.phar install
 ```
 
-## Configuração do Novo SGA
+## Configuração do NovoSGA
 
-Criar arquivo `.env` com a URL de conexão com o banco de dados, e outras variáveis obrigatórios. Após criado o arquivo, será executado o comando de instalação do Novo SGA (criação de tabelas e dados básicos).
+Criar arquivo `.env` com a URL de conexão com o banco de dados, e outras variáveis obrigatórios. Após criado o arquivo, será executado o comando de instalação do NovoSGA (criação de tabelas e dados básicos).
 
 ```sh
 # alterar conexao de acordo com ambiente local
