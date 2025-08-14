@@ -1,4 +1,4 @@
-# NovoSGA
+# NovoSGA v2.2
 
 NovoSGA es un sistema de gestión de colas para lugares de atención al público.
 
