@@ -1,25 +1,25 @@
-# Instalação no Linux
+# Instalación en Linux
 
-Passo-a-passo para instalação do NovoSGA no GNU/Linux para as principais distribuições.
+Paso a paso para instalar NovoSGA en GNU/Linux para las principales distribuciones.
 
 **Requisitos**
 
 - GNU/Linux:
-    - Ubuntu 14.04+ ou
-    - Debian 8+ ou
+    - Ubuntu 20.04+ o
+    - Debian 10+ o
     - CentOS / RHEL
-- MySQL 5.7 **já instalado**
-- PHP 7.2
-- Apache2 ou NGINX
+- MySQL 8.0 o PostgreSQL 13+ **(ya instalado)**
+- PHP 8.2
+- Apache2 o NGINX
 
-## PHP 7.1
+## PHP 8.2
 
 Ubuntu 14.04 - 16.10:
 
     sudo apt install software-properties-common python-software-properties
     sudo apt-add-repository ppa:ondrej/php
     sudo apt update
-    sudo apt install php7.1 php7.1-mysql php7.1-curl php7.1-zip php7.1-intl php7.1-xml php7.1-mbstring php-gettext
+    sudo apt install php8.2 php8.2-mysql php8.2-pgsql php8.2-curl php8.2-zip php8.2-intl php8.2-xml php8.2-mbstring php-gettext
 
 Debian 8 (Jessie):
 
@@ -27,34 +27,31 @@ Debian 8 (Jessie):
     wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg
     echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" > /etc/apt/sources.list.d/php.list
     sudo apt-get update
-    sudo apt install php7.1 php7.1-mysql php7.1-curl php7.1-zip php7.1-intl php7.1-xml php7.1-mbstring php-gettext
+    sudo apt install php8.2 php8.2-mysql php8.2-curl php8.2-zip php8.2-intl php8.2-xml php8.2-mbstring php-gettext
 
-CentOS / RHEL 7.2 & 7.3
+CentOS / RHEL
 
-    wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
-    wget http://rpms.remirepo.net/enterprise/remi-release-7.rpm
-    sudo rpm -Uvh remi-release-7.rpm epel-release-latest-7.noarch.rpm
-    sudo subscription-manager repos --enable=rhel-7-server-optional-rpms
-    sudo yum install yum-utils
-    sudo yum-config-manager --enable remi-php71
-    sudo yum install php71 php71-php-curl php71-php-cli php71-php-mbstring php71-php-zip php71-php-xml php71-php-pdo php71-php-mysql
+    sudo yum -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+    sudo yum -y install http://rpms.remirepo.net/enterprise/remi-release-7.rpm
+    sudo yum-config-manager --enable remi-php82
+    sudo yum install php php-{curl,cli,mbstring,zip,xml,php-pdo,php-mysql,pdo-pgsql}
 
 
-## NovoSGA v2.1
+## NovoSGA v2.2
 
-Baixar **Composer**
+Descargar **Composer**
 
     curl -fSL https://getcomposer.org/composer.phar -o composer.phar
 
-Criar o projeto:
+Crear el proyecto:
 
-    php composer.phar create-project "novosga/novosga:^2.1" ~/novosga
+    php composer.phar create-project "novosga/novosga:^2.2" ~/novosga
 
-Instalar e configurar servidor HTTP: [Apache2](install-linux.md#Apache2) ou [NGINX](install-linux.md#NGINX).
+Instalar y configurar el servidor HTTP: [Apache2](install-linux.md#Apache2) o [NGINX](install-linux.md#NGINX).
 
 ## Apache2
 
-Instalar pacote:
+Instalar paquete:
 
 **Debian/Ubuntu**
 
@@ -66,7 +63,7 @@ Instalar pacote:
     sudo systemctl enable httpd.service
     sudo systemctl start httpd.service
 
-Habilitar os módulos `rewrite` e `env` do Apache2.
+Habilitar los módulos `rewrite` y `env` de Apache2.
 
 **Debian/Ubuntu**
 
@@ -74,23 +71,23 @@ Habilitar os módulos `rewrite` e `env` do Apache2.
 
 **CentOS/RHEL**
 
-    Editar arquivo /etc/httpd/conf.modules.d/00-base.conf manualmente
+    Edite el archivo /etc/httpd/conf.modules.d/00-base.conf manualmente
 
-Mover o diretório da aplicação já instalada:
+Mover el directorio de la aplicación ya instalada:
 
     sudo mv ~/novosga /var/www/
 
-Preparar o cache da aplicação para o ambiente de produção:
+Preparar la memoria caché de la aplicación para el entorno de producción:
     
     bin/console cache:clear --no-debug --no-warmup --env=prod
     bin/console cache:warmup --env=prod
     
-Alterar o dono e dar permissão de escrita no diretório `var` da aplicação:
+Cambiar el propietario y dar permiso de escritura en el directorio `var` de la aplicación:
 
     sudo chown www-data:www-data -R /var/www/novosga
     sudo chmod +w -R /var/www/novosga/var/
 
-Alterar diretório raiz do site e habilitar `.htaccess`:
+Cambiar el directorio raíz del sitio y habilitar `.htaccess`:
 
 **Debian/Ubuntu**
 
@@ -102,7 +99,7 @@ Alterar diretório raiz do site e habilitar `.htaccess`:
     sudo sed -i 's|/var/www/html|/var/www/novosga/public|g' /etc/httpd/conf/httpd.conf
     sudo sed -i 's|AllowOverride None|AllowOverride All|g' /etc/httpd/conf/httpd.conf
 
-Configurar timezone:
+Configurar la zona horaria:
 
 **Debian/Ubuntu**
 
@@ -112,20 +109,20 @@ Configurar timezone:
 
     sudo echo 'date.timezone = America/Sao_Paulo' > /etc/php.ini
 
-Criar arquivo `.htaccess` dentro do diretório `public` da aplicação com as configurações de conexão com o banco:
+Cree el archivo `.htaccess` dentro del directorio `public` de la aplicación con la configuración de la conexión a la base de datos:
 
-!> Formato da URL de conexão com o banco de dados: http://docs.doctrine-project.org/projects/doctrine-dbal/en/latest/reference/configuration.html#connecting-using-a-url
+!> Formato de la URL de conexión a la base de datos: http://docs.doctrine-project.org/projects/doctrine-dbal/en/latest/reference/configuration.html#connecting-using-a-url
 
     echo 'Options -MultiViews
     RewriteEngine On
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^(.*)$ index.php [QSA,L]
     SetEnv APP_ENV prod
-    SetEnv LANGUAGE pt_BR
+    SetEnv LANGUAGE es_ES
     SetEnv DATABASE_URL mysql://novosga:MySQL_App_P4ssW0rd@mysqldb:3306/novosga2?charset=utf8mb4&serverVersion=5.7
     ' > /var/www/novosga/public/.htaccess
 
-Reiniciar serviço do Apache2:
+Reinicie el servicio Apache2:
 
 **Debian/Ubuntu**
 
@@ -135,10 +132,10 @@ Reiniciar serviço do Apache2:
 
     sudo service httpd restart
 
-Executar comando `install` do NovoSGA:
+Ejecute el comando `install` de NovoSGA:
 
     APP_ENV=prod \
-        LANGUAGE=pt_BR \
+        LANGUAGE=es_ES \
         DATABASE_URL="mysql://novosga:MySQL_App_P4ssW0rd@mysqldb:3306/novosga2?charset=utf8mb4&serverVersion=5.7" \
         bin/console novosga:install
 

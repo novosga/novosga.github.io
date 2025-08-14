@@ -10,8 +10,8 @@ Para instalar bastar fazer download da [última versão disponível](https://git
 
 | Campo         | Descrição                                                                                  |
 | ------------- | ------------------------------------------------------------------------------------------ |
-| Servidor      | URL do Novo SGA (Ex: http://127.0.0.1)                                                     |
-| Usuário       | Nome de usuário com acesso ao Novo SGA                                                     |
+| Servidor      | URL do NovoSGA (Ex: http://127.0.0.1)                                                     |
+| Usuário       | Nome de usuário com acesso ao NovoSGA                                                     |
 | Senha         | Senha do usuário informado                                                                 |
 | Client ID     | ID do cliente gerado na [administração do sistema](administration?id=web-api) (Web API)    |
 | Client Secret | Senha do cliente gerado na [administração do sistema](administration?id=web-api) (Web API) |
