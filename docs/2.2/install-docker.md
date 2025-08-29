@@ -31,7 +31,7 @@ Criar arquivo docker-compose.yml com o conteúdo abaixo:
 ```yaml
 services:
   novosga:
-    image: novosga/novosga:2.2
+    image: novosga/novosga:2.2-standalone
     restart: always
     depends_on:
       - mysqldb
