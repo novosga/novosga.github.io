@@ -14,8 +14,8 @@ docker run --rm \
   -p 80:8080 \
   -e DATABASE_URL="mysql://novosga:MySQL_App_P4ssW0rd@mysqldb:3306/novosga2?charset=utf8mb4&serverVersion=5.7" \
   -e MERCURE_JWT_SECRET="!ChangeThisMercureHubJWTSecretKey!" \
-  -e MERCURE_URL: http://mercure:3000/.well-known/mercure \
-  -e MERCURE_PUBLIC_URL: http://127.0.0.1:3000/.well-known/mercure \
+  -e MERCURE_URL="http://mercure:3000/.well-known/mercure" \
+  -e MERCURE_PUBLIC_URL="http://127.0.0.1:3000/.well-known/mercure" \
   novosga/novosga:2.2-standalone
 
 # mercure service for message exchange
