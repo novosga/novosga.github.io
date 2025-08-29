@@ -11,15 +11,18 @@ Executando um simples container:
 ```sh
 # aplicação base
 docker run --rm \
-  -p 80:80 \
+  -p 80:8080 \
   -e DATABASE_URL="mysql://novosga:MySQL_App_P4ssW0rd@mysqldb:3306/novosga2?charset=utf8mb4&serverVersion=5.7" \
-  novosga/novosga:2.2
+  -e MERCURE_JWT_SECRET="!ChangeThisMercureHubJWTSecretKey!" \
+  -e MERCURE_URL: http://mercure:3000/.well-known/mercure \
+  -e MERCURE_PUBLIC_URL: http://127.0.0.1:3000/.well-known/mercure \
+  novosga/novosga:2.2-standalone
 
 # serviço mercure para troca de mensagens
 docker run --rm -it \
     -p 3000:3000 \
     -e 'SERVER_NAME=:3000' \
-    -e 'MERCURE_PUBLISHER_JWT_KEY=!ChangeMe!' \
+    -e 'MERCURE_PUBLISHER_JWT_KEY=!ChangeThisMercureHubJWTSecretKey!' \
     -e 'MERCURE_EXTRA_DIRECTIVES=anonymous 1; cors_origins *' \
     novosga/mercure:v0.11
 ```
