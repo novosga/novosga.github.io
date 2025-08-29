@@ -62,10 +62,10 @@ services:
       APP_LANGUAGE: 'pt_BR'
       # Endereço Mercure para publicar mensagem (onde "mercure" é o nome do host)
       # esse endereço será chamado internamente via o PHP
-      MERCURE_PUBLISH_URL: http://mercure:3000/.well-known/mercure
+      MERCURE_URL: http://mercure:3000/.well-known/mercure
       # Endereço Mercure para consumir mensagem
       # esse endereço será chamado via o navegador web
-      MERCURE_CONSUMER_URL: http://127.0.0.1:3000/.well-known/mercure
+      MERCURE_PUBLIC_URL: http://127.0.0.1:3000/.well-known/mercure
       # the default token is signed with the secret key: !ChangeMe!
       MERCURE_JWT_TOKEN": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXJjdXJlIjp7InB1Ymxpc2giOltdfX0.Oo0yg7y4yMa1vr_bziltxuTCqb8JVHKxp-f_FwwOim0"
   mercure:
