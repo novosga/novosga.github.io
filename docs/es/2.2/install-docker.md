@@ -62,12 +62,12 @@ services:
       APP_LANGUAGE: 'es_ES'
       # Dirección de Mercure para publicar mensajes (donde "mercure" es el nombre del host)
       # esta dirección se llamará internamente a través de PHP
-      MERCURE_PUBLISH_URL: http://mercure:3000/.well-known/mercure
+      MERCURE_URL: http://mercure:3000/.well-known/mercure
       # Dirección de Mercure para consumir mensajes
       # esta dirección se llamará a través del navegador web
-      MERCURE_CONSUMER_URL: http://127.0.0.1:3000/.well-known/mercure
-      # el token predeterminado está firmado con la clave secreta: !ChangeMe!
-      MERCURE_JWT_TOKEN": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXJjdXJlIjp7InB1Ymxpc2giOltdfX0.Oo0yg7y4yMa1vr_bziltxuTCqb8JVHKxp-f_FwwOim0"
+      MERCURE_PUBLIC_URL: http://127.0.0.1:3000/.well-known/mercure
+      # clave de publicación, debe ser la misma que MERCURE_PUBLISHER_JWT_KEY
+      MERCURE_JWT_TOKEN": "!ChangeThisMercureHubJWTSecretKey!"
   mercure:
     image: novosga/mercure:v0.11
     restart: always
@@ -77,7 +77,7 @@ services:
       # mismo valor de los puertos
       SERVER_NAME: ":3000"
       # clave de publicación predeterminada, debe cambiarse
-      MERCURE_PUBLISHER_JWT_KEY: "!ChangeMe!"
+      MERCURE_PUBLISHER_JWT_KEY: "!ChangeThisMercureHubJWTSecretKey!"
       MERCURE_EXTRA_DIRECTIVES:  "anonymous 1; cors_origins *"
   mysqldb:
     image: mysql:8.0
