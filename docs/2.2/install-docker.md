@@ -70,7 +70,7 @@ services:
       # esse endereço será chamado via o navegador web
       MERCURE_PUBLIC_URL: http://127.0.0.1:3000/.well-known/mercure
       # the default secret key, must be the same as MERCURE_PUBLISHER_JWT_KEY
-      MERCURE_JWT_SECRET": "!ChangeThisMercureHubJWTSecretKey!"
+      MERCURE_JWT_SECRET: "!ChangeThisMercureHubJWTSecretKey!"
   mercure:
     image: novosga/mercure:v0.11
     restart: always

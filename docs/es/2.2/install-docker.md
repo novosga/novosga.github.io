@@ -70,7 +70,7 @@ services:
       # esta dirección se llamará a través del navegador web
       MERCURE_PUBLIC_URL: http://127.0.0.1:3000/.well-known/mercure
       # clave de publicación, debe ser la misma que MERCURE_PUBLISHER_JWT_KEY
-      MERCURE_JWT_TOKEN": "!ChangeThisMercureHubJWTSecretKey!"
+      MERCURE_JWT_SECRET: "!ChangeThisMercureHubJWTSecretKey!"
   mercure:
     image: novosga/mercure:v0.11
     restart: always
