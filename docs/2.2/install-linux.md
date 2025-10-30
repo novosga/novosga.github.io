@@ -14,20 +14,20 @@ Passo-a-passo para instalação do NovoSGA no GNU/Linux para as principais distr
 
 ## PHP 8.2
 
-Ubuntu 14.04 - 16.10:
+Ubuntu 24.04:
 
     sudo apt install software-properties-common python-software-properties
     sudo apt-add-repository ppa:ondrej/php
     sudo apt update
-    sudo apt install php8.2 php8.2-mysql php8.2-pgsql php8.2-curl php8.2-zip php8.2-intl php8.2-xml php8.2-mbstring php-gettext
+    sudo apt install php8.2 php8.2-mysql php8.2-pgsql php8.2-curl php8.2-zip php8.2-intl php8.2-xml php8.2-mbstring php8.2-dom php8.2-simplexml
 
-Debian 8 (Jessie):
+Debian 12 (Bookworm):
 
-    apt-get install apt-transport-https lsb-release ca-certificates
-    wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg
-    echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" > /etc/apt/sources.list.d/php.list
+    sudo apt-get install apt-transport-https lsb-release ca-certificates
+    sudo wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg
+    sudo echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" > /etc/apt/sources.list.d/php.list
     sudo apt-get update
-    sudo apt install php8.2 php8.2-mysql php8.2-curl php8.2-zip php8.2-intl php8.2-xml php8.2-mbstring php-gettext
+    sudo apt install php8.2 php8.2-mysql php8.2-curl php8.2-zip php8.2-intl php8.2-xml php8.2-mbstring php8.2-dom php8.2-simplexml
 
 CentOS / RHEL
 
