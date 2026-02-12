@@ -6,7 +6,7 @@
       subtitle: 'Sistema de <strong>gerenciamento de fila</strong> de atendimento',
       feature_fast_title: '<strong>Rápido</strong>',
       feature_fast_desc: '<strong>Rápido</strong> de instalar, <strong>rápido</strong> de usar',
-      feature_extensible_title: '<strong>Estensível</strong>',
+      feature_extensible_title: '<strong>Extensível</strong>',
       feature_extensible_desc: 'Aplicação construída em <strong>módulos</strong>',
       feature_modern_title: '<strong>Moderno</strong>',
       feature_modern_desc: 'Uso de <strong>tecnologias web</strong> modernas',
@@ -110,18 +110,18 @@
     }
 
     var links = document.querySelectorAll('[data-i18n-href]');
-    for (var i = 0; i < links.length; i++) {
-      var key = links[i].getAttribute('data-i18n-href');
-      if (t[key] !== undefined) {
-        links[i].setAttribute('href', t[key]);
+    for (var j = 0; j < links.length; j++) {
+      var hrefKey = links[j].getAttribute('data-i18n-href');
+      if (t[hrefKey] !== undefined) {
+        links[j].setAttribute('href', t[hrefKey]);
       }
     }
 
     var selectors = document.querySelectorAll('.lang-selector a');
-    for (var i = 0; i < selectors.length; i++) {
-      selectors[i].classList.remove('is-active');
-      if (selectors[i].getAttribute('data-lang') === lang) {
-        selectors[i].classList.add('is-active');
+    for (var k = 0; k < selectors.length; k++) {
+      selectors[k].classList.remove('is-active');
+      if (selectors[k].getAttribute('data-lang') === lang) {
+        selectors[k].classList.add('is-active');
       }
     }
   }
