@@ -5,6 +5,7 @@
 - Instalación
   - [Linux](/es/2.2/install-linux.md)
   - [Docker](/es/2.2/install-docker.md)
+  - [DigitalOcean](/es/2.2/install-digitalocean.md)
 
 - [Desarrollo](/es/2.2/development.md)
 
