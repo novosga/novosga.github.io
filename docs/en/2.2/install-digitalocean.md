@@ -24,9 +24,7 @@ After the Droplet is created, access the system from your browser using the Drop
 
     http://<droplet-ip>
 
-On the first access, the installation wizard will be displayed to configure the database, create the administrator user and the initial data.
-
-The default login credentials are:
+Use the default credentials to log in:
 
 - **Username:** `admin`
 - **Password:** `123456`

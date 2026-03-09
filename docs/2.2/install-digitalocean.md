@@ -24,9 +24,7 @@ Após a criação do Droplet, acesse o sistema pelo navegador utilizando o ender
 
     http://<ip-do-droplet>
 
-No primeiro acesso, o assistente de instalação será exibido para configurar o banco de dados, criar o usuário administrador e os dados iniciais.
-
-As credenciais padrão de acesso são:
+Utilize as credenciais padrão para acessar o sistema:
 
 - **Usuário:** `admin`
 - **Senha:** `123456`

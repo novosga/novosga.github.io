@@ -24,9 +24,7 @@ Después de crear el Droplet, acceda al sistema desde su navegador usando la dir
 
     http://<ip-del-droplet>
 
-En el primer acceso, se mostrará el asistente de instalación para configurar la base de datos, crear el usuario administrador y los datos iniciales.
-
-Las credenciales de acceso predeterminadas son:
+Utilice las credenciales predeterminadas para acceder al sistema:
 
 - **Usuario:** `admin`
 - **Contraseña:** `123456`
