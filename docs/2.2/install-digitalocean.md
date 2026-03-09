@@ -1,6 +1,6 @@
 # Instalação via DigitalOcean 1-Click App
 
-O Novo SGA está disponível como um aplicativo 1-Click no marketplace da DigitalOcean, permitindo que você implante o sistema com apenas alguns cliques, sem necessidade de configuração manual do servidor.
+O NovoSGA está disponível como um aplicativo 1-Click no marketplace da DigitalOcean, permitindo que você implante o sistema com apenas alguns cliques, sem necessidade de configuração manual do servidor.
 
 ## Pré-requisitos
 
@@ -8,11 +8,11 @@ O Novo SGA está disponível como um aplicativo 1-Click no marketplace da Digita
 
 ## Instalação
 
-Acesse a página do Novo SGA no marketplace da DigitalOcean:
+Acesse a página do NovoSGA no marketplace da DigitalOcean:
 
-[https://marketplace.digitalocean.com/apps/novosga](https://marketplace.digitalocean.com/apps/novosga)
+[https://marketplace.digitalocean.com/apps/novosga?refcode=6062eee28f2d&action=deploy](https://marketplace.digitalocean.com/apps/novosga?refcode=6062eee28f2d&action=deploy)
 
-Clique no botão **Create Novo SGA Droplet** para iniciar a criação do Droplet.
+Clique no botão **Create NovoSGA Droplet** para iniciar a criação do Droplet.
 
 Selecione o plano, a região e as demais configurações desejadas, em seguida clique em **Create Droplet**.
 
@@ -25,5 +25,10 @@ Após a criação do Droplet, acesse o sistema pelo navegador utilizando o ender
     http://<ip-do-droplet>
 
 No primeiro acesso, o assistente de instalação será exibido para configurar o banco de dados, criar o usuário administrador e os dados iniciais.
+
+As credenciais padrão de acesso são:
+
+- **Usuário:** `admin`
+- **Senha:** `123456`
 
 !> Recomenda-se configurar HTTPS antes de utilizar o sistema em produção.
