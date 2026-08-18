@@ -1,18 +1,8 @@
-# Panel
-
-## Built-in Panel
-
-As of version 2.3, NovoSGA includes a native panel module. Panels are created and managed by the system administrator in the [Administration > Panels](administration.md#panels) section.
-
-Each panel has a unique public URL generated automatically, accessible without authentication:
-
-    http://your-server/painel/{uuid}
-
-The panel displays in real-time the tickets called by attendants, using the integrated Mercure to receive updates.
-
-## Web Panel (external application)
+# Web Panel (external application)
 
 The Web Panel is an external application responsible for displaying the tickets called by the attendant.
+
+> As of version 2.3, NovoSGA includes a [native panel module](module-panel.md), which removes the need to install this external application.
 
 ### Installation
 

@@ -1,18 +1,8 @@
-# Painel
-
-## Painel Integrado
-
-A partir da versão 2.3, o NovoSGA inclui um módulo de painel nativo. Os painéis são criados e gerenciados pelo administrador do sistema na seção [Administração > Painéis](administration.md#painéis).
-
-Cada painel possui uma URL pública única gerada automaticamente, acessível sem autenticação:
-
-    http://seu-servidor/painel/{uuid}
-
-O painel exibe em tempo real as senhas chamadas pelos atendentes, utilizando o Mercure integrado para receber as atualizações.
-
-## Painel Web (aplicativo externo)
+# Painel Web (aplicativo externo)
 
 O Painel Web é um aplicativo externo responsável por exibir as senhas chamadas pelo atendente.
+
+> A partir da versão 2.3, o NovoSGA passou a incluir um [módulo de painel nativo](module-panel.md), que dispensa a instalação deste aplicativo externo.
 
 ### Instalação
 
