@@ -21,6 +21,4 @@
     - [Usuários](/2.3/module-users.md)
     - [Painel](/2.3/module-panel.md)
 
-- [Painel web](/2.3/painel-web.md)
-
 - [API](/2.3/api.md)
