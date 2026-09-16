@@ -20,13 +20,13 @@ set -euo pipefail
 
 prompt_default() {
     local __var="$1" __question="$2" __default="$3" __value
-    read -rp "$__question [$__default]: " __value
+    read -rp "$__question [$__default]: " __value < "$READ_TTY"
     printf -v "$__var" '%s' "${__value:-$__default}"
 }
 
 prompt_secret() {
     local __var="$1" __question="$2" __value
-    read -rsp "$__question (leave blank to auto-generate): " __value
+    read -rsp "$__question (leave blank to auto-generate): " __value < "$READ_TTY"
     echo
     printf -v "$__var" '%s' "$__value"
 }
@@ -36,7 +36,7 @@ random_alnum() {
     # `head -c` closes the pipe once it has enough bytes, which sends `tr`
     # a SIGPIPE (exit 141); with `pipefail` that would otherwise abort the
     # script even though the output we captured is correct, so swallow it.
-    { tr -dc 'A-Za-z0-9' < /dev/urandom | head -c "$len"; } || true
+    { tr -dc 'A-Za-z0-9' < /dev/urandom 2>/dev/null | head -c "$len"; } || true
 }
 
 random_hex() {
@@ -73,6 +73,24 @@ info()  { printf '\033[1;34m[*]\033[0m %s\n' "$1"; }
 ok()    { printf '\033[1;32m[+]\033[0m %s\n' "$1"; }
 warn()  { printf '\033[1;33m[!]\033[0m %s\n' "$1"; }
 die()   { printf '\033[1;31m[x]\033[0m %s\n' "$1" >&2; exit 1; }
+
+# ---------------------------------------------------------------------------
+# Interactive input source
+# ---------------------------------------------------------------------------
+#
+# When run as `curl ... | bash`, stdin IS the script itself, so `read` would
+# hit EOF instantly instead of prompting. Read from the controlling terminal
+# directly instead, same trick used by nvm/deno's installers.
+
+if [ -t 0 ]; then
+    READ_TTY=/dev/stdin
+elif { exec 3</dev/tty; } 2>/dev/null; then
+    exec 3<&-
+    READ_TTY=/dev/tty
+else
+    READ_TTY=""
+    die "No interactive terminal available for the prompts. Download the script first and run it locally: curl -fsSL https://novosga.org/scripts/install-docker-2.3.sh -o install-docker-2.3.sh && bash install-docker-2.3.sh"
+fi
 
 # ---------------------------------------------------------------------------
 # Dependency checks
@@ -151,7 +169,7 @@ if [ -n "$DETECTED_IP" ]; then
     prompt_default MERCURE_PUBLIC_HOST "Public IP/hostname for Mercure (used by browsers)" "$DETECTED_IP"
 else
     warn "Could not auto-detect a public IP."
-    read -rp "Public IP/hostname for Mercure (used by browsers), required: " MERCURE_PUBLIC_HOST
+    read -rp "Public IP/hostname for Mercure (used by browsers), required: " MERCURE_PUBLIC_HOST < "$READ_TTY"
     [ -n "$MERCURE_PUBLIC_HOST" ] || die "A public IP/hostname is required."
 fi
 
@@ -165,7 +183,7 @@ mkdir -p "$INSTALL_DIR"
 COMPOSE_FILE="$INSTALL_DIR/docker-compose.yml"
 
 if [ -e "$COMPOSE_FILE" ]; then
-    read -rp "$COMPOSE_FILE already exists. Overwrite? [y/N]: " OVERWRITE
+    read -rp "$COMPOSE_FILE already exists. Overwrite? [y/N]: " OVERWRITE < "$READ_TTY"
     case "$OVERWRITE" in
         y|Y|yes|YES) ;;
         *) die "Aborted: not overwriting existing $COMPOSE_FILE" ;;
