@@ -4,6 +4,24 @@ It is necessary to have Docker installed in the environment: https://docs.docker
 
 !> Database connection URL format: http://docs.doctrine-project.org/projects/doctrine-dbal/en/latest/reference/configuration.html#connecting-using-a-url
 
+## Automated installation
+
+The script below automates the entire process described on this page: it randomly generates the passwords and `MERCURE_JWT_SECRET`, creates the `docker-compose.yml`, brings up the containers, and grants the database user's permission.
+
+```sh
+curl -fsSL https://novosga.org/scripts/install-docker-2.2.sh | bash
+```
+
+or with `wget`:
+
+```sh
+wget -qO- https://novosga.org/scripts/install-docker-2.2.sh | bash
+```
+
+The script interactively asks for each value (install directory, port, admin username/password, default unity, etc.) — just press Enter to accept the suggested default. At the end, the generated credentials are saved to `CREDENTIALS.txt` in the install directory.
+
+If you'd rather set it up manually, follow the instructions below.
+
 ## Simple container
 
 Running a simple container:

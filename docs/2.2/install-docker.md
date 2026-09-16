@@ -4,6 +4,24 @@
 
 !> Formato da URL de conexão com o banco de dados: http://docs.doctrine-project.org/projects/doctrine-dbal/en/latest/reference/configuration.html#connecting-using-a-url
 
+## Instalação automatizada
+
+O script abaixo automatiza todo o processo descrito nesta página: gera as senhas e o `MERCURE_JWT_SECRET` aleatoriamente, cria o `docker-compose.yml`, sobe os containers e concede a permissão do usuário no banco de dados.
+
+```sh
+curl -fsSL https://novosga.org/scripts/install-docker-2.2.sh | bash
+```
+
+ou com `wget`:
+
+```sh
+wget -qO- https://novosga.org/scripts/install-docker-2.2.sh | bash
+```
+
+O script pergunta interativamente cada valor (diretório de instalação, porta, usuário/senha do admin, unidade padrão etc.) — basta pressionar Enter para aceitar o padrão sugerido. Ao final, as credenciais geradas ficam salvas em `CREDENTIALS.txt` no diretório de instalação.
+
+Se preferir configurar manualmente, siga as instruções abaixo.
+
 ## Container simples
 
 Executando um simples container:

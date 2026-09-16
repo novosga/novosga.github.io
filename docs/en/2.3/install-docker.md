@@ -6,6 +6,24 @@ It is necessary to have Docker installed in the environment: https://docs.docker
 
 The `novosga/novosga:2.3-standalone` image runs three services via supervisord: web server (nginx + php-fpm), task scheduler (supercronic — nightly ticket reset), and Symfony Messenger (async message processing). Mercure is integrated into the image — no separate container is required.
 
+## Automated installation
+
+The script below automates the entire process described on this page: it randomly generates the passwords and `MERCURE_JWT_SECRET`, detects the public IP for `MERCURE_PUBLIC_URL`, creates the `docker-compose.yml`, brings up the containers, and grants the database user's permission.
+
+```sh
+curl -fsSL https://novosga.org/scripts/install-docker-2.3.sh | bash
+```
+
+or with `wget`:
+
+```sh
+wget -qO- https://novosga.org/scripts/install-docker-2.3.sh | bash
+```
+
+The script interactively asks for each value (install directory, port, admin username/password, default unity, etc.) — just press Enter to accept the suggested default. At the end, the generated credentials are saved to `CREDENTIALS.txt` in the install directory.
+
+If you'd rather set it up manually, follow the instructions below.
+
 ## Simple container
 
 Running a simple container:
