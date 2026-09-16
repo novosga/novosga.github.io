@@ -4,6 +4,24 @@ Es necesario tener Docker instalado en el entorno: https://docs.docker.com/engin
 
 !> Formato de la URL de conexión a la base de datos: http://docs.doctrine-project.org/projects/doctrine-dbal/en/latest/reference/configuration.html#connecting-using-a-url
 
+## Instalación automatizada
+
+El siguiente script automatiza todo el proceso descrito en esta página: genera aleatoriamente las contraseñas y el `MERCURE_JWT_SECRET`, crea el `docker-compose.yml`, levanta los contenedores y otorga el permiso del usuario en la base de datos.
+
+```sh
+curl -fsSL https://novosga.org/scripts/install-docker-2.2.sh | bash
+```
+
+o con `wget`:
+
+```sh
+wget -qO- https://novosga.org/scripts/install-docker-2.2.sh | bash
+```
+
+El script pregunta interactivamente cada valor (directorio de instalación, puerto, usuario/contraseña del admin, unidad predeterminada, etc.) — basta con presionar Enter para aceptar el valor sugerido. Al finalizar, las credenciales generadas quedan guardadas en `CREDENTIALS.txt` dentro del directorio de instalación.
+
+Si prefiere configurarlo manualmente, siga las instrucciones a continuación.
+
 ## Contenedor simple
 
 Ejecutando un contenedor simple:

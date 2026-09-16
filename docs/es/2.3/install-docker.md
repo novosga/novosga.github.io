@@ -6,6 +6,24 @@ Es necesario tener Docker instalado en el entorno: https://docs.docker.com/engin
 
 La imagen `novosga/novosga:2.3-standalone` ejecuta tres servicios mediante supervisord: servidor web (nginx + php-fpm), planificador de tareas (supercronic — reinicio nocturno de tickets) y Symfony Messenger (procesamiento asíncrono de mensajes). Mercure está integrado en la imagen, no se requiere un contenedor separado.
 
+## Instalación automatizada
+
+El siguiente script automatiza todo el proceso descrito en esta página: genera aleatoriamente las contraseñas y el `MERCURE_JWT_SECRET`, detecta la IP pública para `MERCURE_PUBLIC_URL`, crea el `docker-compose.yml`, levanta los contenedores y otorga el permiso del usuario en la base de datos.
+
+```sh
+curl -fsSL https://novosga.org/scripts/install-docker-2.3.sh | bash
+```
+
+o con `wget`:
+
+```sh
+wget -qO- https://novosga.org/scripts/install-docker-2.3.sh | bash
+```
+
+El script pregunta interactivamente cada valor (directorio de instalación, puerto, usuario/contraseña del admin, unidad predeterminada, etc.) — basta con presionar Enter para aceptar el valor sugerido. Al finalizar, las credenciales generadas quedan guardadas en `CREDENTIALS.txt` dentro del directorio de instalación.
+
+Si prefiere configurarlo manualmente, siga las instrucciones a continuación.
+
 ## Contenedor simple
 
 Ejecutando un contenedor simple:
